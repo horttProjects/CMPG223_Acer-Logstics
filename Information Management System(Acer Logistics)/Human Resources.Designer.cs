@@ -56,6 +56,8 @@
 			this.label4 = new System.Windows.Forms.Label();
 			this.lblFN = new System.Windows.Forms.Label();
 			this.SortcomboBox = new System.Windows.Forms.ComboBox();
+			this.comboBox2 = new System.Windows.Forms.ComboBox();
+			this.textBox2 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -329,22 +331,52 @@
 			// 
 			// SortcomboBox
 			// 
-			this.SortcomboBox.ForeColor = System.Drawing.SystemColors.ScrollBar;
+			this.SortcomboBox.BackColor = System.Drawing.SystemColors.Window;
+			this.SortcomboBox.ForeColor = System.Drawing.SystemColors.ButtonShadow;
 			this.SortcomboBox.FormattingEnabled = true;
 			this.SortcomboBox.Items.AddRange(new object[] {
             "Firstname",
             "LastName"});
 			this.SortcomboBox.Location = new System.Drawing.Point(236, 221);
 			this.SortcomboBox.Name = "SortcomboBox";
-			this.SortcomboBox.Size = new System.Drawing.Size(148, 21);
+			this.SortcomboBox.Size = new System.Drawing.Size(99, 21);
 			this.SortcomboBox.TabIndex = 7;
 			this.SortcomboBox.Text = "Sort by";
+			// 
+			// comboBox2
+			// 
+			this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.comboBox2.FormattingEnabled = true;
+			this.comboBox2.Items.AddRange(new object[] {
+            "Id",
+            "First name ",
+            "Last name",
+            "Email",
+            "Phone number",
+            "Address"});
+			this.comboBox2.Location = new System.Drawing.Point(363, 221);
+			this.comboBox2.Name = "comboBox2";
+			this.comboBox2.Size = new System.Drawing.Size(94, 21);
+			this.comboBox2.TabIndex = 8;
+			this.comboBox2.Text = "Search by";
+			this.comboBox2.MouseHover += new System.EventHandler(this.comboBox2_MouseHover);
+			// 
+			// textBox2
+			// 
+			this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.textBox2.Location = new System.Drawing.Point(464, 221);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(114, 20);
+			this.textBox2.TabIndex = 9;
+			this.textBox2.Text = "Enter value to search";
 			// 
 			// Human_Resources
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(871, 491);
+			this.Controls.Add(this.textBox2);
+			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.SortcomboBox);
 			this.Controls.Add(this.groupBox3);
 			this.Controls.Add(this.groupBox2);
@@ -361,6 +393,7 @@
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -394,5 +427,7 @@
 		private System.Windows.Forms.TextBox txtName;
 		private System.Windows.Forms.RadioButton FRadioButton;
 		private System.Windows.Forms.RadioButton MRadioButton;
+		private System.Windows.Forms.ComboBox comboBox2;
+		private System.Windows.Forms.TextBox textBox2;
 	}
 }
