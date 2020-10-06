@@ -45,7 +45,8 @@
 			this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.label1 = new System.Windows.Forms.Label();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.reports.SuspendLayout();
 			this.Inventory.SuspendLayout();
 			this.Management.SuspendLayout();
@@ -175,20 +176,21 @@
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRToolStripMenuItem.Text = "HR";
 			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salesToolStripMenuItem.Text = "Sales";
+			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
 			// 
 			// logisticsToolStripMenuItem
 			// 
 			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			// 
 			// menuStrip1
@@ -206,25 +208,38 @@
 			this.menuStrip1.TabIndex = 1;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
-			// label1
+			// lblUsername
 			// 
-			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(550, 0);
-			this.label1.Name = "label1";
-			this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.label1.Size = new System.Drawing.Size(53, 21);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "label1";
-			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsername.Location = new System.Drawing.Point(550, 0);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.lblUsername.Size = new System.Drawing.Size(0, 21);
+			this.lblUsername.TabIndex = 2;
+			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.linkLabel1.Location = new System.Drawing.Point(721, 24);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(49, 15);
+			this.linkLabel1.TabIndex = 3;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "Log-out";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.label1);
+			this.Controls.Add(this.linkLabel1);
+			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
@@ -261,6 +276,7 @@
 		private System.Windows.Forms.ToolStripMenuItem salesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem logisticsToolStripMenuItem;
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		public System.Windows.Forms.Label label1;
+		public System.Windows.Forms.Label lblUsername;
+		private System.Windows.Forms.LinkLabel linkLabel1;
 	}
 }

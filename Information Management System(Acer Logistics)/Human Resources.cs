@@ -51,8 +51,9 @@ namespace Information_Management_System_Acer_Logistics_
 			}
 
 		}
+		//"SELECT Username, Firstname, LastName FROM Login, Employees WHERE Login.Id = Employees.UserID"
 		private void Human_Resources_Load(object sender, EventArgs e)
-		{	
+		{
 			readAll(readEmployees);
 		}
 		public void updatedata(string queiry)
@@ -164,6 +165,16 @@ namespace Information_Management_System_Acer_Logistics_
 		private void comboBox2_MouseHover(object sender, EventArgs e)
 		{
 			comboBox2.ForeColor = Color.Black;
+		}
+
+		private void SortcomboBox_MouseHover(object sender, EventArgs e)
+		{
+			SortcomboBox.ForeColor = Color.Black;
+		}
+
+		private void columnComboBox_MouseHover(object sender, EventArgs e)
+		{
+			columnComboBox.ForeColor = Color.Black;
 		}
 	}
 }

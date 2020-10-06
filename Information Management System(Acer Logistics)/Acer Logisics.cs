@@ -32,5 +32,15 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			this.Close();
 		}
+
+		private void salesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			(new Sales()).ShowDialog();
+		}
+
+		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

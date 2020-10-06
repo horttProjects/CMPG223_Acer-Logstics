@@ -113,6 +113,12 @@
     <Compile Include="RecoverQuiz.Designer.cs">
       <DependentUpon>RecoverQuiz.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Acer Logisics.resx">
       <DependentUpon>Acer Logisics.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecoverQuiz.resx">
       <DependentUpon>RecoverQuiz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

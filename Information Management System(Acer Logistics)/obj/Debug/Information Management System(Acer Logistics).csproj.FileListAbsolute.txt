@@ -17,3 +17,4 @@ C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Managemen
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Human_Resources.resources
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.New_password.resources
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Quiz.resources
+C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Sales.resources

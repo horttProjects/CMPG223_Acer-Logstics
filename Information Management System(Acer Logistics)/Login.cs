@@ -73,29 +73,29 @@ namespace Information_Management_System_Acer_Logistics_
 			{
 				AcerLogisics AL = new AcerLogisics();
 				Create_Account CA = new Create_Account();
-				
+				Human_Resources HR = new Human_Resources();
 				if (authenticate(txtID.Text, txtPassword.Text, ref UserID))
 				{
 					//MessageBox.Show("User at " + CA.getID("SELECT * FROM Login", txtID.Text).ToString());
 					string[] tmp = getUserdet(readAEmpl, CA.getID("SELECT * FROM Login", txtID.Text)).Split(',');
-					AL.label1.Text = "Logged in as " + tmp[0] + " " + tmp[1];
-					
-
 
 					if (tmp[2] == "Manager")
 					{
+						AL.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1];
 						AL.ShowDialog();
 						this.Close();
 					}
 					else if (tmp[2] == "HR")
 					{
-						(new Human_Resources()).ShowDialog();
+						HR.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1];
+						HR.ShowDialog();
 						this.Close();
 					}
 
 				}
 				else
 				{
+					lblFP.Visible = true;
 					errorProvider1.SetError(txtPassword, "Invaid password");
 				}
 			}

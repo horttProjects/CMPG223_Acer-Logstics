@@ -52,7 +52,7 @@ namespace Information_Management_System_Acer_Logistics_
 				{
 					validity = true;     // set to true if the ID is in the database
 					userFirstName = dRead.GetValue(1).ToString();
-					if (dRead.GetValue(8).ToString() != string.Empty || dRead.GetValue(8).ToString() == "-1")
+					if (dRead.GetValue(8).ToString() != "-1")
 					{
 						errorProvider1.SetError(txtId, "Account already exist for this ID, please try again");
 						validity = false;    //set to false if the user already have an account
@@ -197,7 +197,7 @@ namespace Information_Management_System_Acer_Logistics_
 				Human_Resources HR = new Human_Resources();   // Create an object for the HR class
 				string userNm = txtUsername.Text;
 				string userPass = txtPassword.Text;
-				string confirm = txtPassword.Text;
+				string confirm = txtConfirm.Text;
 				string writeLoginTable = "INSERT INTO Login VALUES(@Username, @Password, @Question, @Answer)";
 				string readLogintable = "SELECT * FROM Login";
 				

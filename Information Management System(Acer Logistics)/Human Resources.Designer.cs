@@ -58,16 +58,19 @@
 			this.SortcomboBox = new System.Windows.Forms.ComboBox();
 			this.comboBox2 = new System.Windows.Forms.ComboBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// dataView
 			// 
 			this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataView.Location = new System.Drawing.Point(12, 265);
+			this.dataView.Location = new System.Drawing.Point(12, 292);
 			this.dataView.Name = "dataView";
 			this.dataView.Size = new System.Drawing.Size(818, 223);
 			this.dataView.TabIndex = 0;
@@ -77,7 +80,7 @@
 			this.groupBox3.Controls.Add(this.btnDelete);
 			this.groupBox3.Controls.Add(this.textBox1);
 			this.groupBox3.Controls.Add(this.label3);
-			this.groupBox3.Location = new System.Drawing.Point(442, 12);
+			this.groupBox3.Location = new System.Drawing.Point(442, 39);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(200, 162);
 			this.groupBox3.TabIndex = 6;
@@ -118,7 +121,7 @@
 			this.groupBox2.Controls.Add(this.columnComboBox);
 			this.groupBox2.Controls.Add(this.label1);
 			this.groupBox2.Controls.Add(this.txtIdUp);
-			this.groupBox2.Location = new System.Drawing.Point(235, 11);
+			this.groupBox2.Location = new System.Drawing.Point(235, 38);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(200, 163);
 			this.groupBox2.TabIndex = 5;
@@ -168,6 +171,7 @@
 			this.columnComboBox.Size = new System.Drawing.Size(115, 21);
 			this.columnComboBox.TabIndex = 0;
 			this.columnComboBox.Text = "Column to update";
+			this.columnComboBox.MouseHover += new System.EventHandler(this.columnComboBox_MouseHover);
 			// 
 			// label1
 			// 
@@ -202,7 +206,7 @@
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.lblFN);
-			this.groupBox1.Location = new System.Drawing.Point(29, 12);
+			this.groupBox1.Location = new System.Drawing.Point(29, 39);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(200, 247);
 			this.groupBox1.TabIndex = 4;
@@ -337,11 +341,12 @@
 			this.SortcomboBox.Items.AddRange(new object[] {
             "Firstname",
             "LastName"});
-			this.SortcomboBox.Location = new System.Drawing.Point(236, 221);
+			this.SortcomboBox.Location = new System.Drawing.Point(236, 248);
 			this.SortcomboBox.Name = "SortcomboBox";
 			this.SortcomboBox.Size = new System.Drawing.Size(99, 21);
 			this.SortcomboBox.TabIndex = 7;
 			this.SortcomboBox.Text = "Sort by";
+			this.SortcomboBox.MouseHover += new System.EventHandler(this.SortcomboBox_MouseHover);
 			// 
 			// comboBox2
 			// 
@@ -354,7 +359,7 @@
             "Email",
             "Phone number",
             "Address"});
-			this.comboBox2.Location = new System.Drawing.Point(363, 221);
+			this.comboBox2.Location = new System.Drawing.Point(363, 248);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(94, 21);
 			this.comboBox2.TabIndex = 8;
@@ -364,17 +369,38 @@
 			// textBox2
 			// 
 			this.textBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-			this.textBox2.Location = new System.Drawing.Point(464, 221);
+			this.textBox2.Location = new System.Drawing.Point(464, 248);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(114, 20);
 			this.textBox2.TabIndex = 9;
 			this.textBox2.Text = "Enter value to search";
 			// 
+			// lblUsername
+			// 
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsername.Location = new System.Drawing.Point(3, 6);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.lblUsername.Size = new System.Drawing.Size(59, 22);
+			this.lblUsername.TabIndex = 10;
+			this.lblUsername.Text = "label8";
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.panel1.Controls.Add(this.lblUsername);
+			this.panel1.Location = new System.Drawing.Point(442, 3);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(428, 30);
+			this.panel1.TabIndex = 11;
+			// 
 			// Human_Resources
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(871, 491);
+			this.ClientSize = new System.Drawing.Size(871, 527);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.comboBox2);
 			this.Controls.Add(this.SortcomboBox);
@@ -392,6 +418,8 @@
 			this.groupBox2.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -429,5 +457,7 @@
 		private System.Windows.Forms.RadioButton MRadioButton;
 		private System.Windows.Forms.ComboBox comboBox2;
 		private System.Windows.Forms.TextBox textBox2;
+		public System.Windows.Forms.Label lblUsername;
+		private System.Windows.Forms.Panel panel1;
 	}
 }
