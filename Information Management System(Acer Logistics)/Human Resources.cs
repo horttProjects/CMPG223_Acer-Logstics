@@ -25,7 +25,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private DataSet ds;
 		private SqlDataAdapter adp;
 		private const string readEmployees = "SELECT Id,Firstname,LastName,gender,Email,Phone_Number,Address,Position  FROM Employees";
-		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
+		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 
 		public void readAll(string quiery)
 		{

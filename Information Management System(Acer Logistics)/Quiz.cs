@@ -22,7 +22,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private SqlCommand comm;
 		private SqlDataReader dr;
 		private string userNM;
-		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
+		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		private void button1_Click(object sender, EventArgs e)
 		{
 			if (tmp[2] == textBox1.Text)

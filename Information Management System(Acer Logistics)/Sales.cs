@@ -24,7 +24,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private SqlCommand com;
 		Create_Account CA;
 		Human_Resources HR;
-		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
+		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 
 		private void comboBox1_MouseHover(object sender, EventArgs e)
 		{
