@@ -178,5 +178,10 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			columnComboBox.ForeColor = Color.Black;
 		}
-	}
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+			this.Close();
+        }
+    }
 }

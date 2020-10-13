@@ -125,5 +125,10 @@ namespace Information_Management_System_Acer_Logistics_
 			Quiz forgotPass = new Quiz();
 			forgotPass.ShowDialog();
 		}
-	}
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
