@@ -54,9 +54,8 @@
 			this.lblQuestion.Location = new System.Drawing.Point(115, 62);
 			this.lblQuestion.Name = "lblQuestion";
 			this.lblQuestion.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.lblQuestion.Size = new System.Drawing.Size(35, 13);
+			this.lblQuestion.Size = new System.Drawing.Size(0, 13);
 			this.lblQuestion.TabIndex = 1;
-			this.lblQuestion.Text = "label2";
 			// 
 			// textBox1
 			// 
