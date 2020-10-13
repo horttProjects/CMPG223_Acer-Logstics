@@ -18,3 +18,23 @@ C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Managemen
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.New_password.resources
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Quiz.resources
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Sales.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\bin\Debug\ManagementDB.mdf
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\bin\Debug\ManagementDB_log.ldf
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\bin\Debug\Information Management System(Acer Logistics).exe.config
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\bin\Debug\Information Management System(Acer Logistics).exe
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\bin\Debug\Information Management System(Acer Logistics).pdb
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).csprojAssemblyReference.cache
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.AcerLogisics.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Create_Account.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Forgot_Password.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Human_Resources.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Login.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.New_password.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Properties.Resources.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Quiz.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.RecoverQuiz.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Sales.resources
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).csproj.GenerateResource.cache
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).csproj.CoreCompileInputs.cache
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).exe
+C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).pdb

@@ -45,7 +45,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(151, 255);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 0;
@@ -76,7 +76,7 @@
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(203, 124);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(132, 22);
             this.txtID.TabIndex = 6;
@@ -84,7 +84,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(203, 166);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(132, 22);
@@ -124,15 +124,15 @@
             this.label5.Location = new System.Drawing.Point(121, 305);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 17);
+            this.label5.Size = new System.Drawing.Size(51, 17);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Please enter your details!";
+            this.label5.Text = "Hlulani";
             // 
             // showCheckBox
             // 
             this.showCheckBox.AutoSize = true;
             this.showCheckBox.Location = new System.Drawing.Point(363, 169);
-            this.showCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.showCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.showCheckBox.Name = "showCheckBox";
             this.showCheckBox.Size = new System.Drawing.Size(62, 21);
             this.showCheckBox.TabIndex = 12;
@@ -158,7 +158,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
