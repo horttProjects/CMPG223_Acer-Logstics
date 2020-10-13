@@ -76,15 +76,19 @@ namespace Information_Management_System_Acer_Logistics_
 			dRead = com.ExecuteReader();
 			SO.Items.Clear();
 			SO.Items.Add("Sales orders not delivered");
+			SO.Items.Add("Product  Purchased  Quantity");
 
 			while (dRead.Read())
 			{
-
+				SO.Items.Add(dRead.GetValue(0).ToString() + "  " + dRead.GetValue(1).ToString() + "  " + dRead.GetValue(2).ToString());
 			}
+			con.Close();
 		}
 		private void Management_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			readAll(readDta);
+			string readSONotdelivered = "SELECT name, Date, Quantity, Status FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Purchase_ID = PO.Purchase_ID";
+			readSO(readSONotdelivered);
 		}
 		public void clear()
 		{
