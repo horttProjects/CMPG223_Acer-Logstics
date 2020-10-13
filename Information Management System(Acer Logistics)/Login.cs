@@ -81,7 +81,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 					if (tmp[2] == "Manager")
 					{
-						AL.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1];
+						AL.lblUsername.Text = HR.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1]; 
 						AL.ShowDialog();
 						this.Close();
 					}

@@ -42,7 +42,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 				dataView.DataSource = ds;
 				dataView.DataMember = "data";
-
+			
 				con.Close();
 			}
 			catch(Exception ex)
@@ -85,6 +85,7 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			string updateQueiry = "UPDATE Employees SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE Id = '" + int.Parse(txtIdUp.Text) + "'";
 			updatedata(updateQueiry);
+			(new AcerLogisics()).clear();
 			readAll(readEmployees);
 		}
 		public void deletedata(string deleteQueiry)
@@ -148,6 +149,7 @@ namespace Information_Management_System_Acer_Logistics_
 										string add = "INSERT INTO Employees VALUES(@Firstname, @LastName, @gender, @Email, @Phone_Number, @Address, @Position, @UserID)";
 										addEmployee(add, txtName.Text, txtSurname.Text, gender, txtEmail.Text, int.Parse(txtPN.Text), txtAddress.Text, comboBox1.Text);
 										MessageBox.Show("Employee added");
+										(new AcerLogisics()).clear();
 										readAll(readEmployees);
 									}
 								}

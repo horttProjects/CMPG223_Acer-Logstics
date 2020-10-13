@@ -382,9 +382,8 @@
 			this.lblUsername.Location = new System.Drawing.Point(3, 6);
 			this.lblUsername.Name = "lblUsername";
 			this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.lblUsername.Size = new System.Drawing.Size(59, 22);
+			this.lblUsername.Size = new System.Drawing.Size(0, 22);
 			this.lblUsername.TabIndex = 10;
-			this.lblUsername.Text = "label8";
 			// 
 			// panel1
 			// 
