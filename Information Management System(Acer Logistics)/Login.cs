@@ -25,7 +25,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private int UserID;
 		string readAll = "SELECT * FROM Login";
 		string readAEmpl = "SELECT * FROM Employees";
-		string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
+		string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			

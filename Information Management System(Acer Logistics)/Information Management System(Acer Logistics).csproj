@@ -93,6 +93,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logistics.Designer.cs">
+      <DependentUpon>Logistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="New_password.cs">
       <SubType>Form</SubType>
     </Compile>
