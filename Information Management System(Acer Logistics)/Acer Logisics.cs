@@ -22,6 +22,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private SqlConnection con;
 		private DataSet ds;
 		private SqlCommand com;
+		private SqlDataReader dRead;
 		private string readDta = "SELECT * FROM Supplier";
 		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		public void readAll(string quiery)
@@ -66,7 +67,21 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			this.Close();
 		}
+		public void readSO(string quiery)
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			com = new SqlCommand(quiery, con);
 
+			dRead = com.ExecuteReader();
+			SO.Items.Clear();
+			SO.Items.Add("Sales orders not delivered");
+
+			while (dRead.Read())
+			{
+
+			}
+		}
 		private void Management_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			readAll(readDta);

@@ -84,6 +84,8 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.lblUsername = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.SO = new System.Windows.Forms.ListBox();
+			this.PO = new System.Windows.Forms.ListBox();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -100,6 +102,8 @@
 			// 
 			// reports
 			// 
+			this.reports.Controls.Add(this.PO);
+			this.reports.Controls.Add(this.SO);
 			this.reports.Controls.Add(this.lblUser);
 			this.reports.Location = new System.Drawing.Point(4, 22);
 			this.reports.Name = "reports";
@@ -665,6 +669,24 @@
 			this.linkLabel1.Text = "Log-out";
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
+			// SO
+			// 
+			this.SO.FormattingEnabled = true;
+			this.SO.Location = new System.Drawing.Point(6, 6);
+			this.SO.Name = "SO";
+			this.SO.Size = new System.Drawing.Size(371, 186);
+			this.SO.TabIndex = 3;
+			this.SO.Tag = "SO";
+			// 
+			// PO
+			// 
+			this.PO.FormattingEnabled = true;
+			this.PO.Location = new System.Drawing.Point(382, 6);
+			this.PO.Name = "PO";
+			this.PO.Size = new System.Drawing.Size(371, 186);
+			this.PO.TabIndex = 4;
+			this.PO.Tag = "PO";
+			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,5 +783,7 @@
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.TextBox txtQty;
 		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.ListBox PO;
+		private System.Windows.Forms.ListBox SO;
 	}
 }
