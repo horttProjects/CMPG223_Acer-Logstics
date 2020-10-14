@@ -70,6 +70,12 @@
     <Compile Include="Acer Logisics.Designer.cs">
       <DependentUpon>Acer Logisics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Create Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Acer Logisics.resx">
       <DependentUpon>Acer Logisics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Create Account.resx">
       <DependentUpon>Create Account.cs</DependentUpon>

@@ -32,7 +32,6 @@ namespace Information_Management_System_Acer_Logistics_
 		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		public void readAll(string quiery)
 		{
-
 			con = new SqlConnection(conStr);
 			con.Open();
 			com = new SqlCommand(quiery, con);
@@ -361,7 +360,12 @@ namespace Information_Management_System_Acer_Logistics_
 			readSO(readSONotdelivered);
 			readPO(readPONotDel);
 			readAll();
-			lblProfit.Text = "PROFIT MADE FOR THE PERIOD: R" + (totalSales - totalOrders);
+			lblProfit.Text = "PROFIT MADE FOR THE PERIOD: R" + (totalSales - totalOrders) ;
+		}
+
+		private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			(new Clients()).ShowDialog();
 		}
 	}
 }

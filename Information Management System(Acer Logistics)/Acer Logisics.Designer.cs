@@ -107,6 +107,7 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.lblUsername = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+			this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -138,7 +139,7 @@
 			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3);
-			this.reports.Size = new System.Drawing.Size(814, 376);
+			this.reports.Size = new System.Drawing.Size(814, 492);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -230,7 +231,7 @@
 			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3);
-			this.receiveSo.Size = new System.Drawing.Size(814, 493);
+			this.receiveSo.Size = new System.Drawing.Size(814, 492);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -544,7 +545,7 @@
 			// dataView
 			// 
 			this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataView.Location = new System.Drawing.Point(9, 260);
+			this.dataView.Location = new System.Drawing.Point(0, 259);
 			this.dataView.Name = "dataView";
 			this.dataView.RowHeadersWidth = 51;
 			this.dataView.Size = new System.Drawing.Size(744, 223);
@@ -559,7 +560,7 @@
 			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3);
-			this.Inventory.Size = new System.Drawing.Size(814, 493);
+			this.Inventory.Size = new System.Drawing.Size(814, 376);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
@@ -660,7 +661,7 @@
 			this.Management.Name = "Management";
 			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(822, 400);
+			this.Management.Size = new System.Drawing.Size(822, 516);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -674,7 +675,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 20);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(814, 493);
+			this.tabPage1.Size = new System.Drawing.Size(814, 492);
 			this.tabPage1.TabIndex = 5;
 			this.tabPage1.Text = "Purchase Order";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -865,9 +866,10 @@
 			this.hRDepartmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hRToolStripMenuItem,
             this.salesToolStripMenuItem,
-            this.logisticsToolStripMenuItem});
+            this.logisticsToolStripMenuItem,
+            this.clientsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem
@@ -933,11 +935,18 @@
 			this.linkLabel1.Text = "Log-out";
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
+			// clientsToolStripMenuItem
+			// 
+			this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
+			this.clientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.clientsToolStripMenuItem.Text = "Clients";
+			this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
+			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 433);
+			this.ClientSize = new System.Drawing.Size(900, 545);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
@@ -1059,5 +1068,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label lblProfit;
+		private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
 	}
 }
