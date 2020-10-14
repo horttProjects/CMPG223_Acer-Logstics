@@ -28,7 +28,10 @@ namespace Information_Management_System_Acer_Logistics_
 		string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			
+			System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+			gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+			Region rg = new Region(gp);
+			pictureBox1.Region = rg;
 		}
 		public bool authenticate(string userName, string password, ref int user)
 		{
@@ -81,7 +84,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 					if (tmp[2] == "Manager")
 					{
-						AL.lblUsername.Text = HR.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1]; 
+						AL.lblUsername.Text = HR.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1];
 						AL.ShowDialog();
 						this.Close();
 					}
@@ -91,11 +94,18 @@ namespace Information_Management_System_Acer_Logistics_
 						HR.ShowDialog();
 						this.Close();
 					}
+					else if(tmp[2] == "Administrator"){
+						AL.lblUsername.Text = HR.lblUsername.Text = "Logged in as " + tmp[0] + " " + tmp[1];
+						AL.ShowDialog();
+						this.Close();
+					}
 
 				}
 				else
 				{
 					lblFP.Visible = true;
+					if (txtPassword.Text == string.Empty)
+						label5.Visible = true;
 					errorProvider1.SetError(txtPassword, "Invaid password");
 				}
 			}

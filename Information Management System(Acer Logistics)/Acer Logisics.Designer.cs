@@ -138,7 +138,7 @@
 			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3);
-			this.reports.Size = new System.Drawing.Size(814, 493);
+			this.reports.Size = new System.Drawing.Size(814, 376);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
 			// 
 			// btnRetrive
 			// 
-			this.btnRetrive.Location = new System.Drawing.Point(104, 330);
+			this.btnRetrive.Location = new System.Drawing.Point(134, 305);
 			this.btnRetrive.Name = "btnRetrive";
 			this.btnRetrive.Size = new System.Drawing.Size(75, 45);
 			this.btnRetrive.TabIndex = 3;
@@ -660,7 +660,7 @@
 			this.Management.Name = "Management";
 			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(822, 517);
+			this.Management.Size = new System.Drawing.Size(822, 400);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -937,7 +937,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 548);
+			this.ClientSize = new System.Drawing.Size(900, 433);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
