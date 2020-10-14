@@ -43,7 +43,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtIdUp = new System.Windows.Forms.TextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.ProdcomboBox = new System.Windows.Forms.ComboBox();
 			this.btnAdd = new System.Windows.Forms.Button();
 			this.txtqty = new System.Windows.Forms.TextBox();
 			this.NRadioButton = new System.Windows.Forms.RadioButton();
@@ -207,7 +207,7 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.comboBox1);
+			this.groupBox1.Controls.Add(this.ProdcomboBox);
 			this.groupBox1.Controls.Add(this.btnAdd);
 			this.groupBox1.Controls.Add(this.txtqty);
 			this.groupBox1.Controls.Add(this.NRadioButton);
@@ -220,17 +220,17 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Add SO";
 			// 
-			// comboBox1
+			// ProdcomboBox
 			// 
-			this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(6, 80);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(188, 21);
-			this.comboBox1.TabIndex = 13;
-			this.comboBox1.Text = "Select product";
-			this.comboBox1.DropDown += new System.EventHandler(this.comboBox1_DropDown);
-			this.comboBox1.MouseHover += new System.EventHandler(this.comboBox1_MouseHover);
+			this.ProdcomboBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.ProdcomboBox.FormattingEnabled = true;
+			this.ProdcomboBox.Location = new System.Drawing.Point(6, 80);
+			this.ProdcomboBox.Name = "ProdcomboBox";
+			this.ProdcomboBox.Size = new System.Drawing.Size(188, 21);
+			this.ProdcomboBox.TabIndex = 13;
+			this.ProdcomboBox.Text = "Select product";
+			this.ProdcomboBox.DropDown += new System.EventHandler(this.comboBox1_DropDown);
+			this.ProdcomboBox.MouseHover += new System.EventHandler(this.comboBox1_MouseHover);
 			// 
 			// btnAdd
 			// 
@@ -332,7 +332,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtIdUp;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.ComboBox comboBox1;
+		private System.Windows.Forms.ComboBox ProdcomboBox;
 		private System.Windows.Forms.Button btnAdd;
 		private System.Windows.Forms.TextBox txtqty;
 		private System.Windows.Forms.RadioButton NRadioButton;

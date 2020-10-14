@@ -28,19 +28,19 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void comboBox1_MouseHover(object sender, EventArgs e)
 		{
-			comboBox1.ForeColor = Color.Black;
+			ProdcomboBox.ForeColor = Color.Black;
 		}
 		public void readProducts(string readProd)
 		{
 			con = new SqlConnection(conStr);
 			con.Open();
 
-			comboBox1.Items.Clear();
+			ProdcomboBox.Items.Clear();
 			com = new SqlCommand(readProd, con);
 			dRead = com.ExecuteReader();
 			while (dRead.Read())
 			{
-				comboBox1.Items.Add(dRead.GetValue(0) + " " + dRead.GetValue(1));
+				ProdcomboBox.Items.Add(dRead.GetValue(0) + " " + dRead.GetValue(1));
 			}
 			con.Close();
 		}
@@ -85,7 +85,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private void btnAdd_Click(object sender, EventArgs e)
 		{
 			//addOrder();
-			string[] product = comboBox1.Text.Split(' ');
+			string[] product = ProdcomboBox.Text.Split(' ');
 			int id = (new Create_Account()).getID("SELECT * FROM Product", product[0]);
 			string SOquiery = "INSERT INTO Sales_Order VALUES(@Quantity, @Status, @Product_ID, @Order)";
 			bool status;
@@ -120,7 +120,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			
-			string updateQueiry = "UPDATE Sales_Order SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE salesOrder_ID = '" + int.Parse(txtIdUp.Text) + "'";
+			string updateQueiry = "UPDATE Sales_Order SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE salesOrder_ID = '" + float.Parse(txtIdUp.Text) + "'";
 			HR.updatedata(updateQueiry);
 			readAll();
 		}

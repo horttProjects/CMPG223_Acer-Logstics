@@ -86,6 +86,13 @@
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.SO = new System.Windows.Forms.ListBox();
 			this.PO = new System.Windows.Forms.ListBox();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.ProdcomboBox = new System.Windows.Forms.ComboBox();
+			this.comboBox5 = new System.Windows.Forms.ComboBox();
+			this.button1 = new System.Windows.Forms.Button();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -98,6 +105,9 @@
 			this.Add.SuspendLayout();
 			this.Management.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			this.groupBox5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// reports
@@ -560,6 +570,7 @@
 			this.Management.Controls.Add(this.Inventory);
 			this.Management.Controls.Add(this.receiveSo);
 			this.Management.Controls.Add(this.reports);
+			this.Management.Controls.Add(this.tabPage1);
 			this.Management.Location = new System.Drawing.Point(13, 31);
 			this.Management.Name = "Management";
 			this.Management.SelectedIndex = 0;
@@ -603,27 +614,27 @@
             this.salesToolStripMenuItem,
             this.logisticsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRToolStripMenuItem.Text = "HR";
 			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salesToolStripMenuItem.Text = "Sales";
 			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
 			// 
 			// logisticsToolStripMenuItem
 			// 
 			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
 			// 
@@ -687,6 +698,79 @@
 			this.PO.TabIndex = 4;
 			this.PO.Tag = "PO";
 			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.groupBox5);
+			this.tabPage1.Controls.Add(this.dataGridView2);
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(773, 491);
+			this.tabPage1.TabIndex = 5;
+			this.tabPage1.Text = "Purchase Order";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Location = new System.Drawing.Point(7, 172);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.Size = new System.Drawing.Size(425, 239);
+			this.dataGridView2.TabIndex = 0;
+			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.button1);
+			this.groupBox5.Controls.Add(this.comboBox5);
+			this.groupBox5.Controls.Add(this.ProdcomboBox);
+			this.groupBox5.Controls.Add(this.textBox3);
+			this.groupBox5.Location = new System.Drawing.Point(7, 7);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(226, 144);
+			this.groupBox5.TabIndex = 1;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Add PO";
+			// 
+			// textBox3
+			// 
+			this.textBox3.Location = new System.Drawing.Point(29, 19);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(147, 20);
+			this.textBox3.TabIndex = 0;
+			// 
+			// ProdcomboBox
+			// 
+			this.ProdcomboBox.BackColor = System.Drawing.SystemColors.Window;
+			this.ProdcomboBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.ProdcomboBox.FormattingEnabled = true;
+			this.ProdcomboBox.Location = new System.Drawing.Point(29, 45);
+			this.ProdcomboBox.Name = "ProdcomboBox";
+			this.ProdcomboBox.Size = new System.Drawing.Size(147, 21);
+			this.ProdcomboBox.TabIndex = 1;
+			this.ProdcomboBox.Text = "Products";
+			this.ProdcomboBox.DropDown += new System.EventHandler(this.comboBox4_DropDown);
+			// 
+			// comboBox5
+			// 
+			this.comboBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.comboBox5.FormattingEnabled = true;
+			this.comboBox5.Location = new System.Drawing.Point(29, 73);
+			this.comboBox5.Name = "comboBox5";
+			this.comboBox5.Size = new System.Drawing.Size(147, 21);
+			this.comboBox5.TabIndex = 2;
+			this.comboBox5.Text = "Supplier";
+			this.comboBox5.DropDown += new System.EventHandler(this.comboBox5_DropDown);
+			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(66, 100);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "Add Order";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -720,6 +804,10 @@
 			this.Management.ResumeLayout(false);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			this.tabPage1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -785,5 +873,12 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ListBox PO;
 		private System.Windows.Forms.ListBox SO;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.DataGridView dataGridView2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ComboBox comboBox5;
+		private System.Windows.Forms.ComboBox ProdcomboBox;
+		private System.Windows.Forms.TextBox textBox3;
 	}
 }
