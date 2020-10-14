@@ -79,7 +79,10 @@ namespace Information_Management_System_Acer_Logistics_
 			SO.Items.Add("\t\tSales orders not delivered");
 			SO.Items.Add("=====================================");
 			SO.Items.Add("Date: " + DateTime.UtcNow.ToShortDateString() + " Time: " + DateTime.UtcNow.ToShortTimeString());
+			//SO.Items.Add("\n");
+			SO.Items.Add("_______________________________________________");
 			SO.Items.Add("Product\tPurchased\t\tQuantity");
+			SO.Items.Add("_______________________________________________");
 			int counter = 0;
 			while (dRead.Read())
 			{
@@ -100,12 +103,21 @@ namespace Information_Management_System_Acer_Logistics_
 			PO.Items.Add("\t\tSales orders not delivered");
 			PO.Items.Add("=====================================");
 			PO.Items.Add("Date: " + DateTime.UtcNow.ToShortDateString() + " Time: " + DateTime.UtcNow.ToShortTimeString());
-			PO.Items.Add("Product\tPurchased\t\tQuantity");
+			//PO.Items.Add("\n");
+			PO.Items.Add("_______________________________________________________");
+			PO.Items.Add("Supplier\tName\tProduct\tOrdered\t\tQuantity");
+			PO.Items.Add("_______________________________________________________");
 			int counter = 0;
 			while (dRead.Read())
 			{
-				if (dRead.GetValue(3).ToString() == "False")
-					SO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + "\t" + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "l");
+				string[] date = dRead.GetValue(3).ToString().Split(' ');
+				MessageBox.Show((date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")).ToString()));
+				if(date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")) <= 0)
+				{
+					if (dRead.GetValue(5).ToString() == "False")
+						PO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + " " + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "\t" + dRead.GetValue(3).ToString() + "\t" + dRead.GetValue(4).ToString() + "l");
+				}
+				
 			}
 			con.Close();
 		}
@@ -114,6 +126,8 @@ namespace Information_Management_System_Acer_Logistics_
 			readAll(readDta);
 			string readSONotdelivered = "SELECT name, Date, Quantity, Status FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Order_ID = OrderTable.Order_ID";
 			readSO(readSONotdelivered);
+			string readPONotDel = "SELECT Firstname, Lastname, name, Date, Quantity, Received FROM SupplyProd, Product, OrderTable, Supplier WHERE SupplyProd.Order_ID = OrderTable.Order_ID AND SupplyProd.Product_ID = Product.Product_ID AND SupplyProd.Supplier_ID = Supplier.Supplier_ID";
+			readPO(readPONotDel);
 			readAll();
 		}
 		public void clear()
@@ -174,8 +188,8 @@ namespace Information_Management_System_Acer_Logistics_
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 			if (delete == DialogResult.OK)
 			{
-				(new Human_Resources()).deletedata("DELETE FROM SUpplier WHERE Supplier_ID = '" + (textBox1.Text) + "'");
-				MessageBox.Show(textBox1.Text + "Deleted");
+				(new Human_Resources()).deletedata("DELETE FROM Supplier WHERE Supplier_ID = '" + (textBox1.Text) + "'");
+				MessageBox.Show(textBox1.Text + " Deleted");
 				textBox1.Text = string.Empty;
 				
 				readAll(readDta);
@@ -255,9 +269,48 @@ namespace Information_Management_System_Acer_Logistics_
 			string[] suppier = comboBox5.Text.Split(' ');
 			int prodID = CA.getID("SELECT * FROM Product", product[0]);
 			int supID = CA.getID("SELECT * FROM Supplier", suppier[0]);
-			string add = "INSERT INTO SupplyProd VALUES (@Received, @Quantity, @Order_ID, @Product_ID, @Supplier_ID)";
+			MessageBox.Show((new Sales()).addOrder()+"");
+			string add = "INSERT INTO SupplyProd VALUES(@Received, @Quantity, @Order_ID, @Product_ID, @Supplier_ID)";
 			addPO(add, qty, (new Sales()).addOrder(), prodID, supID);
 			readAll();
+
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+			if (delete == DialogResult.OK)
+			{
+				(new Human_Resources()).deletedata("DELETE FROM SupplyProd WHERE SupplyProd_ID = '" + (textBox4.Text) + "'");
+				MessageBox.Show(textBox4.Text + " Deleted");
+				textBox4.Text = string.Empty;
+
+				readAll();
+			}
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				string updateSupplier = "UPDATE SupplyProd SET " + comboBox4.Text + " = '" + textBox5.Text + "' WHERE Supplier_ID = '" + int.Parse(textBox6.Text) + "'";
+				(new Human_Resources()).updatedata(updateSupplier);
+				readAll();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message);
+			}
+		}
+
+		private void btnRetrive_Click(object sender, EventArgs e)
+		{
+			string time = dateTimePicker1.Value.ToString("yyyy/mm/dd");
+			MessageBox.Show(time);
+		}
+
+		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+		{
 
 		}
 	}

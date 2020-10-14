@@ -93,6 +93,18 @@
 			this.ProdcomboBox = new System.Windows.Forms.ComboBox();
 			this.comboBox5 = new System.Windows.Forms.ComboBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.button2 = new System.Windows.Forms.Button();
+			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
+			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.btnRetrive = new System.Windows.Forms.Button();
+			this.label12 = new System.Windows.Forms.Label();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -108,17 +120,21 @@
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.groupBox5.SuspendLayout();
+			this.groupBox7.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// reports
 			// 
+			this.reports.Controls.Add(this.label12);
+			this.reports.Controls.Add(this.btnRetrive);
+			this.reports.Controls.Add(this.dateTimePicker1);
 			this.reports.Controls.Add(this.PO);
 			this.reports.Controls.Add(this.SO);
 			this.reports.Controls.Add(this.lblUser);
 			this.reports.Location = new System.Drawing.Point(4, 22);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.reports.Size = new System.Drawing.Size(773, 491);
+			this.reports.Size = new System.Drawing.Size(814, 491);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -127,7 +143,7 @@
 			// 
 			this.lblUser.AutoSize = true;
 			this.lblUser.Font = new System.Drawing.Font("Modern No. 20", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUser.Location = new System.Drawing.Point(506, 26);
+			this.lblUser.Location = new System.Drawing.Point(506, 35);
 			this.lblUser.Name = "lblUser";
 			this.lblUser.Size = new System.Drawing.Size(0, 17);
 			this.lblUser.TabIndex = 2;
@@ -145,7 +161,7 @@
 			this.receiveSo.Location = new System.Drawing.Point(4, 22);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.receiveSo.Size = new System.Drawing.Size(773, 491);
+			this.receiveSo.Size = new System.Drawing.Size(762, 491);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -474,7 +490,7 @@
 			this.Inventory.Location = new System.Drawing.Point(4, 22);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.Inventory.Size = new System.Drawing.Size(773, 491);
+			this.Inventory.Size = new System.Drawing.Size(762, 491);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
@@ -574,7 +590,7 @@
 			this.Management.Location = new System.Drawing.Point(13, 31);
 			this.Management.Name = "Management";
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(781, 517);
+			this.Management.Size = new System.Drawing.Size(822, 517);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -683,29 +699,32 @@
 			// SO
 			// 
 			this.SO.FormattingEnabled = true;
-			this.SO.Location = new System.Drawing.Point(6, 6);
+			this.SO.Location = new System.Drawing.Point(6, 39);
 			this.SO.Name = "SO";
-			this.SO.Size = new System.Drawing.Size(371, 186);
+			this.SO.Size = new System.Drawing.Size(371, 251);
 			this.SO.TabIndex = 3;
 			this.SO.Tag = "SO";
 			// 
 			// PO
 			// 
 			this.PO.FormattingEnabled = true;
-			this.PO.Location = new System.Drawing.Point(382, 6);
+			this.PO.Location = new System.Drawing.Point(382, 39);
 			this.PO.Name = "PO";
-			this.PO.Size = new System.Drawing.Size(371, 186);
+			this.PO.Size = new System.Drawing.Size(426, 251);
 			this.PO.TabIndex = 4;
 			this.PO.Tag = "PO";
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.groupBox7);
+			this.tabPage1.Controls.Add(this.button2);
+			this.tabPage1.Controls.Add(this.textBox4);
 			this.tabPage1.Controls.Add(this.groupBox5);
 			this.tabPage1.Controls.Add(this.dataGridView2);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(773, 491);
+			this.tabPage1.Size = new System.Drawing.Size(814, 491);
 			this.tabPage1.TabIndex = 5;
 			this.tabPage1.Text = "Purchase Order";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -713,9 +732,9 @@
 			// dataGridView2
 			// 
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(7, 172);
+			this.dataGridView2.Location = new System.Drawing.Point(7, 183);
 			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(425, 239);
+			this.dataGridView2.Size = new System.Drawing.Size(664, 228);
 			this.dataGridView2.TabIndex = 0;
 			// 
 			// groupBox5
@@ -733,10 +752,12 @@
 			// 
 			// textBox3
 			// 
+			this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
 			this.textBox3.Location = new System.Drawing.Point(29, 19);
 			this.textBox3.Name = "textBox3";
 			this.textBox3.Size = new System.Drawing.Size(147, 20);
 			this.textBox3.TabIndex = 0;
+			this.textBox3.Text = "Quantity";
 			// 
 			// ProdcomboBox
 			// 
@@ -770,6 +791,123 @@
 			this.button1.Text = "Add Order";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
+			// textBox4
+			// 
+			this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.textBox4.Location = new System.Drawing.Point(288, 26);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(117, 20);
+			this.textBox4.TabIndex = 2;
+			this.textBox4.Text = "ID to delete";
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(307, 62);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 3;
+			this.button2.Text = "Delete";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
+			// 
+			// groupBox7
+			// 
+			this.groupBox7.Controls.Add(this.textBox5);
+			this.groupBox7.Controls.Add(this.label10);
+			this.groupBox7.Controls.Add(this.button3);
+			this.groupBox7.Controls.Add(this.comboBox4);
+			this.groupBox7.Controls.Add(this.label11);
+			this.groupBox7.Controls.Add(this.textBox6);
+			this.groupBox7.Location = new System.Drawing.Point(461, 7);
+			this.groupBox7.Name = "groupBox7";
+			this.groupBox7.Size = new System.Drawing.Size(200, 157);
+			this.groupBox7.TabIndex = 15;
+			this.groupBox7.TabStop = false;
+			this.groupBox7.Text = "Update Supplier";
+			// 
+			// textBox5
+			// 
+			this.textBox5.Location = new System.Drawing.Point(79, 81);
+			this.textBox5.Name = "textBox5";
+			this.textBox5.Size = new System.Drawing.Size(115, 20);
+			this.textBox5.TabIndex = 6;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(4, 88);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(61, 13);
+			this.label10.TabIndex = 5;
+			this.label10.Text = "New value:";
+			// 
+			// button3
+			// 
+			this.button3.Location = new System.Drawing.Point(62, 121);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(93, 23);
+			this.button3.TabIndex = 4;
+			this.button3.Text = "Update";
+			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
+			// 
+			// comboBox4
+			// 
+			this.comboBox4.ForeColor = System.Drawing.SystemColors.ScrollBar;
+			this.comboBox4.FormattingEnabled = true;
+			this.comboBox4.Items.AddRange(new object[] {
+            "Quantity"});
+			this.comboBox4.Location = new System.Drawing.Point(79, 54);
+			this.comboBox4.Name = "comboBox4";
+			this.comboBox4.Size = new System.Drawing.Size(115, 21);
+			this.comboBox4.TabIndex = 0;
+			this.comboBox4.Text = "Column to update";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(44, 35);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(21, 13);
+			this.label11.TabIndex = 1;
+			this.label11.Tag = "";
+			this.label11.Text = "ID:";
+			// 
+			// textBox6
+			// 
+			this.textBox6.Location = new System.Drawing.Point(79, 28);
+			this.textBox6.Name = "textBox6";
+			this.textBox6.Size = new System.Drawing.Size(115, 20);
+			this.textBox6.TabIndex = 2;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePicker1.Location = new System.Drawing.Point(373, 13);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
+			this.dateTimePicker1.TabIndex = 2;
+			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+			// 
+			// btnRetrive
+			// 
+			this.btnRetrive.Location = new System.Drawing.Point(101, 332);
+			this.btnRetrive.Name = "btnRetrive";
+			this.btnRetrive.Size = new System.Drawing.Size(75, 23);
+			this.btnRetrive.TabIndex = 3;
+			this.btnRetrive.Text = "Retrieve";
+			this.btnRetrive.UseVisualStyleBackColor = true;
+			this.btnRetrive.Click += new System.EventHandler(this.btnRetrive_Click);
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(335, 19);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(32, 13);
+			this.label12.TabIndex = 5;
+			this.label12.Text = "Filter:";
 			// 
 			// AcerLogisics
 			// 
@@ -805,9 +943,12 @@
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.tabPage1.ResumeLayout(false);
+			this.tabPage1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.groupBox5.ResumeLayout(false);
 			this.groupBox5.PerformLayout();
+			this.groupBox7.ResumeLayout(false);
+			this.groupBox7.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -880,5 +1021,17 @@
 		private System.Windows.Forms.ComboBox comboBox5;
 		private System.Windows.Forms.ComboBox ProdcomboBox;
 		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.GroupBox groupBox7;
+		private System.Windows.Forms.TextBox textBox5;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.ComboBox comboBox4;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.TextBox textBox6;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.Button btnRetrive;
+		private System.Windows.Forms.Label label12;
 	}
 }
