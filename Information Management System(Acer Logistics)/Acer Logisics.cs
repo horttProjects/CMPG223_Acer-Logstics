@@ -75,19 +75,23 @@ namespace Information_Management_System_Acer_Logistics_
 
 			dRead = com.ExecuteReader();
 			SO.Items.Clear();
-			SO.Items.Add("Sales orders not delivered");
-			SO.Items.Add("Product  Purchased  Quantity");
-
+			SO.Items.Add("Acer Logisticts");
+			SO.Items.Add("\t\tSales orders not delivered");
+			SO.Items.Add(DateTime.UtcNow.ToShortDateString() + " " + DateTime.UtcNow.ToShortTimeString());
+			SO.Items.Add("Product\tPurchased\t\tQuantity");
+			int counter = 0;
 			while (dRead.Read())
 			{
-				SO.Items.Add(dRead.GetValue(0).ToString() + "  " + dRead.GetValue(1).ToString() + "  " + dRead.GetValue(2).ToString());
+				if(dRead.GetValue(3).ToString()=="False")
+					SO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + "\t" + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "l");
 			}
 			con.Close();
 		}
+
 		private void Management_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			readAll(readDta);
-			string readSONotdelivered = "SELECT name, Date, Quantity, Status FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Purchase_ID = PO.Purchase_ID";
+			string readSONotdelivered = "SELECT name, Date, Quantity, Status FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Order_ID = OrderTable.Order_ID";
 			readSO(readSONotdelivered);
 		}
 		public void clear()

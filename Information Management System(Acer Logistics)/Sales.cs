@@ -86,7 +86,7 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			//addOrder();
 			string[] product = comboBox1.Text.Split(' ');
-			int id = (CA).getID("SELECT * FROM Product", product[0]);
+			int id = (new Create_Account()).getID("SELECT * FROM Product", product[0]);
 			string SOquiery = "INSERT INTO Sales_Order VALUES(@Quantity, @Status, @Product_ID, @Order)";
 			bool status;
 			if (PRadioButton.Checked)
@@ -94,6 +94,7 @@ namespace Information_Management_System_Acer_Logistics_
 			else
 				status = false;
 			addSO(SOquiery, float.Parse(txtqty.Text), status, id, addOrder());
+			readAll();
 		}
 		public void readAll()
 		{
