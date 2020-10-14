@@ -29,6 +29,8 @@
 		private void InitializeComponent()
 		{
 			this.reports = new System.Windows.Forms.TabPage();
+			this.label13 = new System.Windows.Forms.Label();
+			this.lblProfit = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnRetrive = new System.Windows.Forms.Button();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -125,6 +127,8 @@
 			// 
 			// reports
 			// 
+			this.reports.Controls.Add(this.label13);
+			this.reports.Controls.Add(this.lblProfit);
 			this.reports.Controls.Add(this.label12);
 			this.reports.Controls.Add(this.btnRetrive);
 			this.reports.Controls.Add(this.dateTimePicker1);
@@ -139,6 +143,25 @@
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
 			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+			this.label13.Location = new System.Drawing.Point(6, 20);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(73, 13);
+			this.label13.TabIndex = 7;
+			this.label13.Text = "Get Text-File?";
+			// 
+			// lblProfit
+			// 
+			this.lblProfit.AutoSize = true;
+			this.lblProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblProfit.Location = new System.Drawing.Point(269, 330);
+			this.lblProfit.Name = "lblProfit";
+			this.lblProfit.Size = new System.Drawing.Size(0, 20);
+			this.lblProfit.TabIndex = 6;
+			// 
 			// label12
 			// 
 			this.label12.AutoSize = true;
@@ -150,7 +173,7 @@
 			// 
 			// btnRetrive
 			// 
-			this.btnRetrive.Location = new System.Drawing.Point(91, 307);
+			this.btnRetrive.Location = new System.Drawing.Point(104, 330);
 			this.btnRetrive.Name = "btnRetrive";
 			this.btnRetrive.Size = new System.Drawing.Size(75, 45);
 			this.btnRetrive.TabIndex = 3;
@@ -669,7 +692,7 @@
 			this.groupBox7.Size = new System.Drawing.Size(200, 157);
 			this.groupBox7.TabIndex = 15;
 			this.groupBox7.TabStop = false;
-			this.groupBox7.Text = "Update PO";
+			this.groupBox7.Text = "Update Supplier";
 			// 
 			// textBox5
 			// 
@@ -1034,5 +1057,7 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Button btnRetrive;
 		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label lblProfit;
 	}
 }
