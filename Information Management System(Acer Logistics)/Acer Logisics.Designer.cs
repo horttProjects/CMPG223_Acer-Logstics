@@ -72,12 +72,9 @@
 			this.Inventory = new System.Windows.Forms.TabPage();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
-			this.Change = new System.Windows.Forms.GroupBox();
 			this.Add = new System.Windows.Forms.GroupBox();
 			this.btn = new System.Windows.Forms.Button();
-			this.comboBox3 = new System.Windows.Forms.ComboBox();
-			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.txtQty = new System.Windows.Forms.TextBox();
+			this.txtID = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.Management = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -108,6 +105,12 @@
 			this.lblUsername = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
+			this.label14 = new System.Windows.Forms.Label();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label16 = new System.Windows.Forms.Label();
+			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.button4 = new System.Windows.Forms.Button();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -117,6 +120,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.Inventory.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.groupBox3.SuspendLayout();
 			this.Add.SuspendLayout();
 			this.Management.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -124,6 +128,7 @@
 			this.groupBox5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.menuStrip1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// reports
@@ -139,7 +144,7 @@
 			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3);
-			this.reports.Size = new System.Drawing.Size(814, 492);
+			this.reports.Size = new System.Drawing.Size(814, 362);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -231,7 +236,7 @@
 			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3);
-			this.receiveSo.Size = new System.Drawing.Size(814, 492);
+			this.receiveSo.Size = new System.Drawing.Size(814, 362);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -553,51 +558,46 @@
 			// 
 			// Inventory
 			// 
+			this.Inventory.Controls.Add(this.label15);
+			this.Inventory.Controls.Add(this.label14);
+			this.Inventory.Controls.Add(this.dataGridView3);
 			this.Inventory.Controls.Add(this.dataGridView1);
 			this.Inventory.Controls.Add(this.groupBox3);
-			this.Inventory.Controls.Add(this.Change);
 			this.Inventory.Controls.Add(this.Add);
 			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3);
-			this.Inventory.Size = new System.Drawing.Size(814, 376);
+			this.Inventory.Size = new System.Drawing.Size(814, 362);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
+			this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
 			// 
 			// dataGridView1
 			// 
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(26, 169);
+			this.dataGridView1.Location = new System.Drawing.Point(7, 168);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+			this.dataGridView1.Size = new System.Drawing.Size(478, 150);
 			this.dataGridView1.TabIndex = 3;
 			// 
 			// groupBox3
 			// 
-			this.groupBox3.Location = new System.Drawing.Point(421, 7);
+			this.groupBox3.Controls.Add(this.button4);
+			this.groupBox3.Controls.Add(this.textBox7);
+			this.groupBox3.Controls.Add(this.label16);
+			this.groupBox3.Location = new System.Drawing.Point(261, 7);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(200, 134);
 			this.groupBox3.TabIndex = 2;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Delete";
 			// 
-			// Change
-			// 
-			this.Change.Location = new System.Drawing.Point(214, 7);
-			this.Change.Name = "Change";
-			this.Change.Size = new System.Drawing.Size(200, 134);
-			this.Change.TabIndex = 1;
-			this.Change.TabStop = false;
-			this.Change.Text = "Update";
-			// 
 			// Add
 			// 
 			this.Add.Controls.Add(this.btn);
-			this.Add.Controls.Add(this.comboBox3);
-			this.Add.Controls.Add(this.comboBox1);
-			this.Add.Controls.Add(this.txtQty);
+			this.Add.Controls.Add(this.txtID);
 			this.Add.Controls.Add(this.label9);
 			this.Add.Location = new System.Drawing.Point(7, 7);
 			this.Add.Name = "Add";
@@ -608,48 +608,29 @@
 			// 
 			// btn
 			// 
-			this.btn.Location = new System.Drawing.Point(54, 99);
+			this.btn.Location = new System.Drawing.Point(59, 77);
 			this.btn.Name = "btn";
 			this.btn.Size = new System.Drawing.Size(75, 23);
 			this.btn.TabIndex = 4;
 			this.btn.Text = "Add Inventory";
 			this.btn.UseVisualStyleBackColor = true;
+			this.btn.Click += new System.EventHandler(this.btn_Click);
 			// 
-			// comboBox3
+			// txtID
 			// 
-			this.comboBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.comboBox3.FormattingEnabled = true;
-			this.comboBox3.Location = new System.Drawing.Point(31, 72);
-			this.comboBox3.Name = "comboBox3";
-			this.comboBox3.Size = new System.Drawing.Size(121, 21);
-			this.comboBox3.TabIndex = 3;
-			this.comboBox3.Text = "Product";
-			// 
-			// comboBox1
-			// 
-			this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.comboBox1.FormattingEnabled = true;
-			this.comboBox1.Location = new System.Drawing.Point(31, 44);
-			this.comboBox1.Name = "comboBox1";
-			this.comboBox1.Size = new System.Drawing.Size(121, 21);
-			this.comboBox1.TabIndex = 2;
-			this.comboBox1.Text = "Supplier";
-			// 
-			// txtQty
-			// 
-			this.txtQty.Location = new System.Drawing.Point(65, 18);
-			this.txtQty.Name = "txtQty";
-			this.txtQty.Size = new System.Drawing.Size(100, 20);
-			this.txtQty.TabIndex = 1;
+			this.txtID.Location = new System.Drawing.Point(80, 29);
+			this.txtID.Name = "txtID";
+			this.txtID.Size = new System.Drawing.Size(100, 20);
+			this.txtID.TabIndex = 1;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(10, 25);
+			this.label9.Location = new System.Drawing.Point(3, 36);
 			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(49, 13);
+			this.label9.Size = new System.Drawing.Size(71, 13);
 			this.label9.TabIndex = 0;
-			this.label9.Text = "Quantity:";
+			this.label9.Text = "ID to receive:";
 			// 
 			// Management
 			// 
@@ -661,7 +642,7 @@
 			this.Management.Name = "Management";
 			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(822, 516);
+			this.Management.Size = new System.Drawing.Size(822, 386);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -843,7 +824,7 @@
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -875,21 +856,21 @@
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.hRToolStripMenuItem.Text = "HR";
 			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.salesToolStripMenuItem.Text = "Sales";
 			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
 			// 
 			// logisticsToolStripMenuItem
 			// 
 			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
 			// 
@@ -942,11 +923,63 @@
 			this.clientsToolStripMenuItem.Text = "Clients";
 			this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
 			// 
+			// dataGridView3
+			// 
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Location = new System.Drawing.Point(492, 168);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.Size = new System.Drawing.Size(300, 150);
+			this.dataGridView3.TabIndex = 4;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(6, 152);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(89, 13);
+			this.label14.TabIndex = 5;
+			this.label14.Text = "Purchase Orders:";
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(489, 152);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(54, 13);
+			this.label15.TabIndex = 6;
+			this.label15.Text = "Inventory:";
+			// 
+			// label16
+			// 
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(17, 36);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(65, 13);
+			this.label16.TabIndex = 0;
+			this.label16.Text = "ID to delete:";
+			// 
+			// textBox7
+			// 
+			this.textBox7.Location = new System.Drawing.Point(89, 28);
+			this.textBox7.Name = "textBox7";
+			this.textBox7.Size = new System.Drawing.Size(100, 20);
+			this.textBox7.TabIndex = 1;
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(61, 77);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(75, 23);
+			this.button4.TabIndex = 2;
+			this.button4.Text = "Delete";
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 545);
+			this.ClientSize = new System.Drawing.Size(900, 416);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
@@ -969,7 +1002,10 @@
 			this.groupBox4.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
 			this.Inventory.ResumeLayout(false);
+			this.Inventory.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
 			this.Add.ResumeLayout(false);
 			this.Add.PerformLayout();
 			this.Management.ResumeLayout(false);
@@ -982,6 +1018,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -993,7 +1030,6 @@
 		private System.Windows.Forms.TabPage receiveSo;
 		private System.Windows.Forms.TabPage Inventory;
 		private System.Windows.Forms.GroupBox groupBox3;
-		private System.Windows.Forms.GroupBox Change;
 		private System.Windows.Forms.GroupBox Add;
 		private System.Windows.Forms.TabControl Management;
 		public System.Windows.Forms.Label lblUser;
@@ -1041,9 +1077,7 @@
 		private System.Windows.Forms.DataGridView dataView;
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button btn;
-		private System.Windows.Forms.ComboBox comboBox3;
-		private System.Windows.Forms.ComboBox comboBox1;
-		private System.Windows.Forms.TextBox txtQty;
+		private System.Windows.Forms.TextBox txtID;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.ListBox PO;
 		private System.Windows.Forms.ListBox SO;
@@ -1069,5 +1103,11 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label lblProfit;
 		private System.Windows.Forms.ToolStripMenuItem clientsToolStripMenuItem;
+		private System.Windows.Forms.Label label15;
+		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.DataGridView dataGridView3;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.Label label16;
 	}
 }

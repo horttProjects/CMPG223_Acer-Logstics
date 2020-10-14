@@ -46,7 +46,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
-			string updateSupplier = "UPDATE Client SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE Supplier_ID = '" + int.Parse(txtIdUp.Text) + "'";
+			string updateSupplier = "UPDATE Client SET " + columnComboBox.Text + " = '" + txtNewVal.Text + "' WHERE Client_ID = '" + int.Parse(txtIdUp.Text) + "'";
 			(new Human_Resources()).updatedata(updateSupplier);
 			readAll("SELECT * FROM Client");
 		}
@@ -71,7 +71,7 @@ namespace Information_Management_System_Acer_Logistics_
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 			if (delete == DialogResult.OK)
 			{
-				(new Human_Resources()).deletedata("DELETE FROM Supplier WHERE Supplier_ID = '" + (textBox1.Text) + "'");
+				(new Human_Resources()).deletedata("DELETE FROM Client WHERE Client_ID = '" + (textBox1.Text) + "'");
 				MessageBox.Show(textBox1.Text + " Deleted");
 				textBox1.Text = string.Empty;
 

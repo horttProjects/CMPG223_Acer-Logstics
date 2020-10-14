@@ -51,10 +51,26 @@ namespace Information_Management_System_Acer_Logistics_
 			HR = new Human_Resources();
 			HR.ShowDialog();
 		}
-		
+		public void readPO()
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			com = new SqlCommand("SELECT SupplyProd_ID, Received, name, Date, Quantity FROM SupplyProd, OrderTable, Product WHERE SupplyProd.Order_ID=OrderTable.Order_ID AND SupplyProd.Product_ID=Product.Product_ID", con);
+			adp = new SqlDataAdapter();
+			ds = new DataSet();
+
+			adp.SelectCommand = com;
+			adp.Fill(ds, "data");
+
+			dataGridView1.DataSource = ds;
+			dataGridView1.DataMember = "data";
+
+			con.Close();
+		}
 		private void AcerLogisics_Load(object sender, EventArgs e)
 		{
-			
+			readPO();
+			readInventory("SELECT * FROM Inventory");
 		}
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -315,7 +331,7 @@ namespace Information_Management_System_Acer_Logistics_
 			string[] suppier = comboBox5.Text.Split(' ');
 			int prodID = CA.getID("SELECT * FROM Product", product[0]);
 			int supID = CA.getID("SELECT * FROM Supplier", suppier[0]);
-			MessageBox.Show((new Sales()).addOrder()+"");
+			//MessageBox.Show((new Sales()).addOrder()+"");
 			string add = "INSERT INTO SupplyProd VALUES(@Received, @Quantity, @Order_ID, @Product_ID, @Supplier_ID)";
 			addPO(add, qty, (new Sales()).addOrder(), prodID, supID);
 			readAll();
@@ -366,6 +382,84 @@ namespace Information_Management_System_Acer_Logistics_
 		private void clientsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			(new Clients()).ShowDialog();
+		}
+		public void searchID(string quiery, string ID)
+		{
+			con.Open();
+			com = new SqlCommand(quiery, con);
+			dRead = com.ExecuteReader();
+			while(dRead.Read())
+			{
+				if(dRead.GetValue(0).ToString()==ID && dRead.GetValue(3).ToString() == "False")
+				{
+					int id = (new Create_Account()).getID("SELECT * FROM Product", dRead.GetValue(1).ToString());
+					String delivered = "True";
+					(new Human_Resources()).updatedata("UPDATE INVENTORY SET QUANTITY = '" + (getQty("SELECT * FROM Inventory", id) + float.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
+					(new Human_Resources()).updatedata("UPDATE SupplyProd SET Received = '" + delivered + "' WHERE SupplyProd_ID = '" + dRead.GetValue(0).ToString() + "'");
+					readPO();
+					readInventory("SELECT * FROM Inventory");
+					break;
+				}
+				else
+				{
+					if (dRead.GetValue(0).ToString() == "True")
+						MessageBox.Show("Order already received!!");
+					else
+						MessageBox.Show("Order not found. Try again");
+				}
+			}
+			con.Close();
+		}
+		public float getQty(string quiery, int id)
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			com = new SqlCommand(quiery, con);
+			SqlDataReader dr = com.ExecuteReader();
+			while (dr.Read())
+			{
+				if (int.Parse(dr.GetValue(0).ToString()) == id)
+					return float.Parse(dr.GetValue(1).ToString());
+			}
+			return 0;
+		}
+		private void btn_Click(object sender, EventArgs e)
+		{
+			string addInventoy = "SELECT SupplyProd_ID, name, Quantity, Received FROM SupplyProd,Product WHERE SupplyProd.Product_ID=Product.Product_ID";
+			searchID(addInventoy, txtID.Text);
+		}
+
+		private void Inventory_Click(object sender, EventArgs e)
+		{
+
+		}
+		public void readInventory(string quiery)
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			com = new SqlCommand(quiery, con);
+			adp = new SqlDataAdapter();
+			ds = new DataSet();
+
+			adp.SelectCommand = com;
+			adp.Fill(ds, "data");
+
+			dataGridView3.DataSource = ds;
+			dataGridView3.DataMember = "data";
+
+			con.Close();
+		}
+		private void button4_Click(object sender, EventArgs e)
+		{
+			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+			if (delete == DialogResult.OK)
+			{
+				(new Human_Resources()).deletedata("DELETE FROM Inventory WHERE Product_ID = '" + (textBox7.Text) + "'");
+				MessageBox.Show(textBox7.Text + " Deleted");
+				textBox7.Text = string.Empty;
+
+				readInventory("SELECT * FROM Inventory");
+			}
 		}
 	}
 }
