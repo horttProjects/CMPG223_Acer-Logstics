@@ -77,7 +77,6 @@ namespace Information_Management_System_Acer_Logistics_
 			con = new SqlConnection(conStr);
 			con.Open();
 			com = new SqlCommand(quiery, con);
-
 			float SODelivered = 0;
 			float SONotDelivered = 0;
 			dRead = com.ExecuteReader();
@@ -91,12 +90,15 @@ namespace Information_Management_System_Acer_Logistics_
 			SO.Items.Add("Product\tPurchased\t\tQuantity");
 			SO.Items.Add("_______________________________________________");
 			int counter = 0;
+			
 			while (dRead.Read())
 			{
+				
 				string[] date = dRead.GetValue(1).ToString().Split(' ');
 
 				if (date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")) < 1)
 				{
+					
 					if (dRead.GetValue(3).ToString() == "False")
 					{
 						SO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + "\t" + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "liters");
@@ -109,7 +111,7 @@ namespace Information_Management_System_Acer_Logistics_
 				}
 			}
 			totalSales = float.Parse(dRead.GetValue(4).ToString()) * SODelivered;
-			SO.Items.Add("\n");
+			//SO.Items.Add("\n");
 			SO.Items.Add("_______________________________________________");
 			SO.Items.Add("Total Sales Sold: " + SODelivered);
 			SO.Items.Add("Total Sales Not Sold: " + SONotDelivered);
@@ -134,6 +136,7 @@ namespace Information_Management_System_Acer_Logistics_
 			PO.Items.Add("Supplier\tName\tProduct\tOrdered\t\tQuantity");
 			PO.Items.Add("_______________________________________________________");
 			int counter = 0;
+	
 			while (dRead.Read())
 			{
 				string[] date = dRead.GetValue(3).ToString().Split(' ');
@@ -153,7 +156,7 @@ namespace Information_Management_System_Acer_Logistics_
 				
 			}
 			totalOrders = float.Parse(dRead.GetValue(6).ToString()) * POdelivered;
-			PO.Items.Add("\n");
+			//PO.Items.Add("\n");
 			PO.Items.Add("_______________________________________________________");
 			PO.Items.Add("Total Purchase Orders Delivered = " + POdelivered + "Liters");
 			PO.Items.Add("Total Purchase Orders Not Delivered = " + PONotdelivered + "Liters");
@@ -343,8 +346,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void btnRetrive_Click(object sender, EventArgs e)
 		{
-			string time = dateTimePicker1.Value.ToString("yyyy/mm/dd");
-			MessageBox.Show(time);
+			(new Graphical()).ShowDialog();
 		}
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -353,6 +355,11 @@ namespace Information_Management_System_Acer_Logistics_
 			readSO(readSONotdelivered);
 			readPO(readPONotDel);
 			readAll();
+		}
+
+		private void label13_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

@@ -52,6 +52,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,6 +81,12 @@
     </Compile>
     <Compile Include="Forgot Password.Designer.cs">
       <DependentUpon>Forgot Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Graphical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphical.Designer.cs">
+      <DependentUpon>Graphical.cs</DependentUpon>
     </Compile>
     <Compile Include="Human Resources.cs">
       <SubType>Form</SubType>
@@ -133,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot Password.resx">
       <DependentUpon>Forgot Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphical.resx">
+      <DependentUpon>Graphical.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Human Resources.resx">
       <DependentUpon>Human Resources.cs</DependentUpon>

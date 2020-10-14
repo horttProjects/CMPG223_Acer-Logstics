@@ -29,6 +29,11 @@
 		private void InitializeComponent()
 		{
 			this.reports = new System.Windows.Forms.TabPage();
+			this.label12 = new System.Windows.Forms.Label();
+			this.btnRetrive = new System.Windows.Forms.Button();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.PO = new System.Windows.Forms.ListBox();
+			this.SO = new System.Windows.Forms.ListBox();
 			this.lblUser = new System.Windows.Forms.Label();
 			this.receiveSo = new System.Windows.Forms.TabPage();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -73,6 +78,22 @@
 			this.txtQty = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.Management = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.groupBox7 = new System.Windows.Forms.GroupBox();
+			this.textBox5 = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
+			this.comboBox4 = new System.Windows.Forms.ComboBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.textBox6 = new System.Windows.Forms.TextBox();
+			this.button2 = new System.Windows.Forms.Button();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.button1 = new System.Windows.Forms.Button();
+			this.comboBox5 = new System.Windows.Forms.ComboBox();
+			this.ProdcomboBox = new System.Windows.Forms.ComboBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.dataGridView2 = new System.Windows.Forms.DataGridView();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,29 +105,6 @@
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.lblUsername = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.SO = new System.Windows.Forms.ListBox();
-			this.PO = new System.Windows.Forms.ListBox();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.ProdcomboBox = new System.Windows.Forms.ComboBox();
-			this.comboBox5 = new System.Windows.Forms.ComboBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.button2 = new System.Windows.Forms.Button();
-			this.groupBox7 = new System.Windows.Forms.GroupBox();
-			this.textBox5 = new System.Windows.Forms.TextBox();
-			this.label10 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
-			this.comboBox4 = new System.Windows.Forms.ComboBox();
-			this.label11 = new System.Windows.Forms.Label();
-			this.textBox6 = new System.Windows.Forms.TextBox();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-			this.btnRetrive = new System.Windows.Forms.Button();
-			this.label12 = new System.Windows.Forms.Label();
-			this.lblProfit = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -118,17 +116,15 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.Add.SuspendLayout();
 			this.Management.SuspendLayout();
-			this.menuStrip1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-			this.groupBox5.SuspendLayout();
 			this.groupBox7.SuspendLayout();
+			this.groupBox5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// reports
 			// 
-			this.reports.Controls.Add(this.label13);
-			this.reports.Controls.Add(this.lblProfit);
 			this.reports.Controls.Add(this.label12);
 			this.reports.Controls.Add(this.btnRetrive);
 			this.reports.Controls.Add(this.dateTimePicker1);
@@ -137,11 +133,57 @@
 			this.reports.Controls.Add(this.lblUser);
 			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
-			this.reports.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.reports.Padding = new System.Windows.Forms.Padding(3);
 			this.reports.Size = new System.Drawing.Size(814, 493);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(335, 19);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(32, 13);
+			this.label12.TabIndex = 5;
+			this.label12.Text = "Filter:";
+			// 
+			// btnRetrive
+			// 
+			this.btnRetrive.Location = new System.Drawing.Point(91, 307);
+			this.btnRetrive.Name = "btnRetrive";
+			this.btnRetrive.Size = new System.Drawing.Size(75, 45);
+			this.btnRetrive.TabIndex = 3;
+			this.btnRetrive.Text = "Graphical";
+			this.btnRetrive.UseVisualStyleBackColor = true;
+			this.btnRetrive.Click += new System.EventHandler(this.btnRetrive_Click);
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dateTimePicker1.Location = new System.Drawing.Point(373, 13);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
+			this.dateTimePicker1.TabIndex = 2;
+			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+			// 
+			// PO
+			// 
+			this.PO.FormattingEnabled = true;
+			this.PO.Location = new System.Drawing.Point(382, 39);
+			this.PO.Name = "PO";
+			this.PO.Size = new System.Drawing.Size(426, 251);
+			this.PO.TabIndex = 4;
+			this.PO.Tag = "PO";
+			// 
+			// SO
+			// 
+			this.SO.FormattingEnabled = true;
+			this.SO.Location = new System.Drawing.Point(6, 39);
+			this.SO.Name = "SO";
+			this.SO.Size = new System.Drawing.Size(371, 251);
+			this.SO.TabIndex = 3;
+			this.SO.Tag = "SO";
 			// 
 			// lblUser
 			// 
@@ -164,7 +206,7 @@
 			this.receiveSo.Controls.Add(this.dataView);
 			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
-			this.receiveSo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.receiveSo.Padding = new System.Windows.Forms.Padding(3);
 			this.receiveSo.Size = new System.Drawing.Size(814, 493);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
@@ -493,7 +535,7 @@
 			this.Inventory.Controls.Add(this.Add);
 			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
-			this.Inventory.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+			this.Inventory.Padding = new System.Windows.Forms.Padding(3);
 			this.Inventory.Size = new System.Drawing.Size(814, 493);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
@@ -599,126 +641,6 @@
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
-			// fileToolStripMenuItem
-			// 
-			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-			this.fileToolStripMenuItem.Text = "File";
-			// 
-			// exitToolStripMenuItem
-			// 
-			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-			this.exitToolStripMenuItem.Text = "Exit";
-			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-			// 
-			// editToolStripMenuItem
-			// 
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-			this.editToolStripMenuItem.Text = "Edit";
-			// 
-			// viewToolStripMenuItem
-			// 
-			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hRDepartmentToolStripMenuItem});
-			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-			this.viewToolStripMenuItem.Text = "View";
-			// 
-			// hRDepartmentToolStripMenuItem
-			// 
-			this.hRDepartmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hRToolStripMenuItem,
-            this.salesToolStripMenuItem,
-            this.logisticsToolStripMenuItem});
-			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.hRDepartmentToolStripMenuItem.Text = "Departments";
-			// 
-			// hRToolStripMenuItem
-			// 
-			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.hRToolStripMenuItem.Text = "HR";
-			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
-			// 
-			// salesToolStripMenuItem
-			// 
-			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.salesToolStripMenuItem.Text = "Sales";
-			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
-			// 
-			// logisticsToolStripMenuItem
-			// 
-			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.logisticsToolStripMenuItem.Text = "Logistics";
-			this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
-			// 
-			// menuStrip1
-			// 
-			this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-			this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
-			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
-			this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.menuStrip1.Size = new System.Drawing.Size(900, 24);
-			this.menuStrip1.TabIndex = 1;
-			this.menuStrip1.Text = "menuStrip1";
-			// 
-			// lblUsername
-			// 
-			this.lblUsername.AutoSize = true;
-			this.lblUsername.BackColor = System.Drawing.SystemColors.ControlDark;
-			this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblUsername.Location = new System.Drawing.Point(550, 0);
-			this.lblUsername.Name = "lblUsername";
-			this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.lblUsername.Size = new System.Drawing.Size(0, 21);
-			this.lblUsername.TabIndex = 2;
-			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// linkLabel1
-			// 
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-			this.linkLabel1.Location = new System.Drawing.Point(721, 24);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(49, 15);
-			this.linkLabel1.TabIndex = 3;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Log-out";
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-			// 
-			// SO
-			// 
-			this.SO.FormattingEnabled = true;
-			this.SO.Location = new System.Drawing.Point(6, 39);
-			this.SO.Name = "SO";
-			this.SO.Size = new System.Drawing.Size(371, 251);
-			this.SO.TabIndex = 3;
-			this.SO.Tag = "SO";
-			// 
-			// PO
-			// 
-			this.PO.FormattingEnabled = true;
-			this.PO.Location = new System.Drawing.Point(382, 39);
-			this.PO.Name = "PO";
-			this.PO.Size = new System.Drawing.Size(426, 251);
-			this.PO.TabIndex = 4;
-			this.PO.Tag = "PO";
-			// 
 			// tabPage1
 			// 
 			this.tabPage1.Controls.Add(this.groupBox7);
@@ -734,88 +656,6 @@
 			this.tabPage1.Text = "Purchase Order";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
-			// dataGridView2
-			// 
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Location = new System.Drawing.Point(7, 183);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(664, 228);
-			this.dataGridView2.TabIndex = 0;
-			// 
-			// groupBox5
-			// 
-			this.groupBox5.Controls.Add(this.button1);
-			this.groupBox5.Controls.Add(this.comboBox5);
-			this.groupBox5.Controls.Add(this.ProdcomboBox);
-			this.groupBox5.Controls.Add(this.textBox3);
-			this.groupBox5.Location = new System.Drawing.Point(7, 7);
-			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(226, 144);
-			this.groupBox5.TabIndex = 1;
-			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Add PO";
-			// 
-			// textBox3
-			// 
-			this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.textBox3.Location = new System.Drawing.Point(29, 19);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(147, 20);
-			this.textBox3.TabIndex = 0;
-			this.textBox3.Text = "Quantity";
-			// 
-			// ProdcomboBox
-			// 
-			this.ProdcomboBox.BackColor = System.Drawing.SystemColors.Window;
-			this.ProdcomboBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.ProdcomboBox.FormattingEnabled = true;
-			this.ProdcomboBox.Location = new System.Drawing.Point(29, 45);
-			this.ProdcomboBox.Name = "ProdcomboBox";
-			this.ProdcomboBox.Size = new System.Drawing.Size(147, 21);
-			this.ProdcomboBox.TabIndex = 1;
-			this.ProdcomboBox.Text = "Products";
-			this.ProdcomboBox.DropDown += new System.EventHandler(this.comboBox4_DropDown);
-			// 
-			// comboBox5
-			// 
-			this.comboBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-			this.comboBox5.FormattingEnabled = true;
-			this.comboBox5.Location = new System.Drawing.Point(29, 73);
-			this.comboBox5.Name = "comboBox5";
-			this.comboBox5.Size = new System.Drawing.Size(147, 21);
-			this.comboBox5.TabIndex = 2;
-			this.comboBox5.Text = "Supplier";
-			this.comboBox5.DropDown += new System.EventHandler(this.comboBox5_DropDown);
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(66, 100);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 3;
-			this.button1.Text = "Add Order";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// textBox4
-			// 
-			this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.textBox4.Location = new System.Drawing.Point(288, 26);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(117, 20);
-			this.textBox4.TabIndex = 2;
-			this.textBox4.Text = "ID to delete";
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(307, 62);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 3;
-			this.button2.Text = "Delete";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click);
-			// 
 			// groupBox7
 			// 
 			this.groupBox7.Controls.Add(this.textBox5);
@@ -829,7 +669,7 @@
 			this.groupBox7.Size = new System.Drawing.Size(200, 157);
 			this.groupBox7.TabIndex = 15;
 			this.groupBox7.TabStop = false;
-			this.groupBox7.Text = "Update Supplier";
+			this.groupBox7.Text = "Update PO";
 			// 
 			// textBox5
 			// 
@@ -886,53 +726,189 @@
 			this.textBox6.Size = new System.Drawing.Size(115, 20);
 			this.textBox6.TabIndex = 2;
 			// 
-			// dateTimePicker1
+			// button2
 			// 
-			this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dateTimePicker1.Location = new System.Drawing.Point(373, 13);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(93, 20);
-			this.dateTimePicker1.TabIndex = 2;
-			this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+			this.button2.Location = new System.Drawing.Point(307, 62);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 3;
+			this.button2.Text = "Delete";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
-			// btnRetrive
+			// textBox4
 			// 
-			this.btnRetrive.Location = new System.Drawing.Point(104, 330);
-			this.btnRetrive.Name = "btnRetrive";
-			this.btnRetrive.Size = new System.Drawing.Size(75, 45);
-			this.btnRetrive.TabIndex = 3;
-			this.btnRetrive.Text = "Graphical";
-			this.btnRetrive.UseVisualStyleBackColor = true;
-			this.btnRetrive.Click += new System.EventHandler(this.btnRetrive_Click);
+			this.textBox4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.textBox4.Location = new System.Drawing.Point(288, 26);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(117, 20);
+			this.textBox4.TabIndex = 2;
+			this.textBox4.Text = "ID to delete";
 			// 
-			// label12
+			// groupBox5
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Location = new System.Drawing.Point(335, 19);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(32, 13);
-			this.label12.TabIndex = 5;
-			this.label12.Text = "Filter:";
+			this.groupBox5.Controls.Add(this.button1);
+			this.groupBox5.Controls.Add(this.comboBox5);
+			this.groupBox5.Controls.Add(this.ProdcomboBox);
+			this.groupBox5.Controls.Add(this.textBox3);
+			this.groupBox5.Location = new System.Drawing.Point(7, 7);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(226, 144);
+			this.groupBox5.TabIndex = 1;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "Add PO";
 			// 
-			// lblProfit
+			// button1
 			// 
-			this.lblProfit.AutoSize = true;
-			this.lblProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblProfit.Location = new System.Drawing.Point(269, 330);
-			this.lblProfit.Name = "lblProfit";
-			this.lblProfit.Size = new System.Drawing.Size(294, 20);
-			this.lblProfit.TabIndex = 6;
-			this.lblProfit.Text = "PROFIT MADE FOR THE PERIOD: ";
+			this.button1.Location = new System.Drawing.Point(66, 100);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(75, 23);
+			this.button1.TabIndex = 3;
+			this.button1.Text = "Add Order";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
-			// label13
+			// comboBox5
 			// 
-			this.label13.AutoSize = true;
-			this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
-			this.label13.Location = new System.Drawing.Point(6, 20);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(73, 13);
-			this.label13.TabIndex = 7;
-			this.label13.Text = "Get Text-File?";
+			this.comboBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.comboBox5.FormattingEnabled = true;
+			this.comboBox5.Location = new System.Drawing.Point(29, 73);
+			this.comboBox5.Name = "comboBox5";
+			this.comboBox5.Size = new System.Drawing.Size(147, 21);
+			this.comboBox5.TabIndex = 2;
+			this.comboBox5.Text = "Supplier";
+			this.comboBox5.DropDown += new System.EventHandler(this.comboBox5_DropDown);
+			// 
+			// ProdcomboBox
+			// 
+			this.ProdcomboBox.BackColor = System.Drawing.SystemColors.Window;
+			this.ProdcomboBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.ProdcomboBox.FormattingEnabled = true;
+			this.ProdcomboBox.Location = new System.Drawing.Point(29, 45);
+			this.ProdcomboBox.Name = "ProdcomboBox";
+			this.ProdcomboBox.Size = new System.Drawing.Size(147, 21);
+			this.ProdcomboBox.TabIndex = 1;
+			this.ProdcomboBox.Text = "Products";
+			this.ProdcomboBox.DropDown += new System.EventHandler(this.comboBox4_DropDown);
+			// 
+			// textBox3
+			// 
+			this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
+			this.textBox3.Location = new System.Drawing.Point(29, 19);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(147, 20);
+			this.textBox3.TabIndex = 0;
+			this.textBox3.Text = "Quantity";
+			// 
+			// dataGridView2
+			// 
+			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView2.Location = new System.Drawing.Point(7, 183);
+			this.dataGridView2.Name = "dataGridView2";
+			this.dataGridView2.Size = new System.Drawing.Size(664, 228);
+			this.dataGridView2.TabIndex = 0;
+			// 
+			// fileToolStripMenuItem
+			// 
+			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+			this.fileToolStripMenuItem.Text = "File";
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+			this.exitToolStripMenuItem.Text = "Exit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+			// 
+			// editToolStripMenuItem
+			// 
+			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+			this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+			this.editToolStripMenuItem.Text = "Edit";
+			// 
+			// viewToolStripMenuItem
+			// 
+			this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hRDepartmentToolStripMenuItem});
+			this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+			this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+			this.viewToolStripMenuItem.Text = "View";
+			// 
+			// hRDepartmentToolStripMenuItem
+			// 
+			this.hRDepartmentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.hRToolStripMenuItem,
+            this.salesToolStripMenuItem,
+            this.logisticsToolStripMenuItem});
+			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+			this.hRDepartmentToolStripMenuItem.Text = "Departments";
+			// 
+			// hRToolStripMenuItem
+			// 
+			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.hRToolStripMenuItem.Text = "HR";
+			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
+			// 
+			// salesToolStripMenuItem
+			// 
+			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.salesToolStripMenuItem.Text = "Sales";
+			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
+			// 
+			// logisticsToolStripMenuItem
+			// 
+			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.logisticsToolStripMenuItem.Text = "Logistics";
+			this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
+			// 
+			// menuStrip1
+			// 
+			this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+			this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+			this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
+			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip1.Name = "menuStrip1";
+			this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
+			this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+			this.menuStrip1.Size = new System.Drawing.Size(900, 24);
+			this.menuStrip1.TabIndex = 1;
+			this.menuStrip1.Text = "menuStrip1";
+			// 
+			// lblUsername
+			// 
+			this.lblUsername.AutoSize = true;
+			this.lblUsername.BackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblUsername.Location = new System.Drawing.Point(550, 0);
+			this.lblUsername.Name = "lblUsername";
+			this.lblUsername.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.lblUsername.Size = new System.Drawing.Size(0, 21);
+			this.lblUsername.TabIndex = 2;
+			this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+			this.linkLabel1.Location = new System.Drawing.Point(721, 24);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(49, 15);
+			this.linkLabel1.TabIndex = 3;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "Log-out";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// AcerLogisics
 			// 
@@ -965,15 +941,15 @@
 			this.Add.ResumeLayout(false);
 			this.Add.PerformLayout();
 			this.Management.ResumeLayout(false);
-			this.menuStrip1.ResumeLayout(false);
-			this.menuStrip1.PerformLayout();
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-			this.groupBox5.ResumeLayout(false);
-			this.groupBox5.PerformLayout();
 			this.groupBox7.ResumeLayout(false);
 			this.groupBox7.PerformLayout();
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+			this.menuStrip1.ResumeLayout(false);
+			this.menuStrip1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1058,7 +1034,5 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Button btnRetrive;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label lblProfit;
 	}
 }
