@@ -101,16 +101,15 @@
 			this.hRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.salesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.lblUsername = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.dataGridView3 = new System.Windows.Forms.DataGridView();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
-			this.label16 = new System.Windows.Forms.Label();
-			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.button4 = new System.Windows.Forms.Button();
+			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -144,7 +143,7 @@
 			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3);
-			this.reports.Size = new System.Drawing.Size(814, 362);
+			this.reports.Size = new System.Drawing.Size(814, 492);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -236,7 +235,7 @@
 			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3);
-			this.receiveSo.Size = new System.Drawing.Size(814, 362);
+			this.receiveSo.Size = new System.Drawing.Size(814, 492);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -567,11 +566,10 @@
 			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3);
-			this.Inventory.Size = new System.Drawing.Size(814, 362);
+			this.Inventory.Size = new System.Drawing.Size(814, 492);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
-			this.Inventory.Click += new System.EventHandler(this.Inventory_Click);
 			// 
 			// dataGridView1
 			// 
@@ -579,15 +577,14 @@
 			this.dataGridView1.Location = new System.Drawing.Point(7, 168);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(478, 150);
+			this.dataGridView1.Size = new System.Drawing.Size(508, 150);
 			this.dataGridView1.TabIndex = 3;
 			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.button4);
 			this.groupBox3.Controls.Add(this.textBox7);
-			this.groupBox3.Controls.Add(this.label16);
-			this.groupBox3.Location = new System.Drawing.Point(261, 7);
+			this.groupBox3.Location = new System.Drawing.Point(266, 7);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(200, 134);
 			this.groupBox3.TabIndex = 2;
@@ -608,7 +605,7 @@
 			// 
 			// btn
 			// 
-			this.btn.Location = new System.Drawing.Point(59, 77);
+			this.btn.Location = new System.Drawing.Point(61, 69);
 			this.btn.Name = "btn";
 			this.btn.Size = new System.Drawing.Size(75, 23);
 			this.btn.TabIndex = 4;
@@ -618,7 +615,7 @@
 			// 
 			// txtID
 			// 
-			this.txtID.Location = new System.Drawing.Point(80, 29);
+			this.txtID.Location = new System.Drawing.Point(87, 18);
 			this.txtID.Name = "txtID";
 			this.txtID.Size = new System.Drawing.Size(100, 20);
 			this.txtID.TabIndex = 1;
@@ -626,7 +623,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(3, 36);
+			this.label9.Location = new System.Drawing.Point(10, 25);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(71, 13);
 			this.label9.TabIndex = 0;
@@ -642,7 +639,7 @@
 			this.Management.Name = "Management";
 			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(822, 386);
+			this.Management.Size = new System.Drawing.Size(822, 516);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -824,7 +821,7 @@
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -850,29 +847,36 @@
             this.logisticsToolStripMenuItem,
             this.clientsToolStripMenuItem});
 			this.hRDepartmentToolStripMenuItem.Name = "hRDepartmentToolStripMenuItem";
-			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.hRDepartmentToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
 			this.hRDepartmentToolStripMenuItem.Text = "Departments";
 			// 
 			// hRToolStripMenuItem
 			// 
 			this.hRToolStripMenuItem.Name = "hRToolStripMenuItem";
-			this.hRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.hRToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.hRToolStripMenuItem.Text = "HR";
 			this.hRToolStripMenuItem.Click += new System.EventHandler(this.hRToolStripMenuItem_Click);
 			// 
 			// salesToolStripMenuItem
 			// 
 			this.salesToolStripMenuItem.Name = "salesToolStripMenuItem";
-			this.salesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.salesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.salesToolStripMenuItem.Text = "Sales";
 			this.salesToolStripMenuItem.Click += new System.EventHandler(this.salesToolStripMenuItem_Click);
 			// 
 			// logisticsToolStripMenuItem
 			// 
 			this.logisticsToolStripMenuItem.Name = "logisticsToolStripMenuItem";
-			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.logisticsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
 			this.logisticsToolStripMenuItem.Text = "Logistics";
 			this.logisticsToolStripMenuItem.Click += new System.EventHandler(this.logisticsToolStripMenuItem_Click);
+			// 
+			// clientsToolStripMenuItem
+			// 
+			this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
+			this.clientsToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+			this.clientsToolStripMenuItem.Text = "Clients";
+			this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
 			// 
 			// menuStrip1
 			// 
@@ -916,70 +920,56 @@
 			this.linkLabel1.Text = "Log-out";
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
-			// clientsToolStripMenuItem
-			// 
-			this.clientsToolStripMenuItem.Name = "clientsToolStripMenuItem";
-			this.clientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.clientsToolStripMenuItem.Text = "Clients";
-			this.clientsToolStripMenuItem.Click += new System.EventHandler(this.clientsToolStripMenuItem_Click);
-			// 
 			// dataGridView3
 			// 
 			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Location = new System.Drawing.Point(492, 168);
+			this.dataGridView3.Location = new System.Drawing.Point(533, 168);
 			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.Size = new System.Drawing.Size(300, 150);
+			this.dataGridView3.Size = new System.Drawing.Size(249, 150);
 			this.dataGridView3.TabIndex = 4;
 			// 
 			// label14
 			// 
 			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(6, 152);
+			this.label14.Location = new System.Drawing.Point(7, 148);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(89, 13);
+			this.label14.Size = new System.Drawing.Size(38, 13);
 			this.label14.TabIndex = 5;
-			this.label14.Text = "Purchase Orders:";
+			this.label14.Text = "Orders";
 			// 
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(489, 152);
+			this.label15.Location = new System.Drawing.Point(533, 149);
 			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(54, 13);
+			this.label15.Size = new System.Drawing.Size(51, 13);
 			this.label15.TabIndex = 6;
-			this.label15.Text = "Inventory:";
-			// 
-			// label16
-			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(17, 36);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(65, 13);
-			this.label16.TabIndex = 0;
-			this.label16.Text = "ID to delete:";
-			// 
-			// textBox7
-			// 
-			this.textBox7.Location = new System.Drawing.Point(89, 28);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(100, 20);
-			this.textBox7.TabIndex = 1;
+			this.label15.Text = "Inventory";
 			// 
 			// button4
 			// 
-			this.button4.Location = new System.Drawing.Point(61, 77);
+			this.button4.Location = new System.Drawing.Point(61, 74);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(75, 23);
-			this.button4.TabIndex = 2;
+			this.button4.TabIndex = 5;
 			this.button4.Text = "Delete";
 			this.button4.UseVisualStyleBackColor = true;
 			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// textBox7
+			// 
+			this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.textBox7.Location = new System.Drawing.Point(42, 38);
+			this.textBox7.Name = "textBox7";
+			this.textBox7.Size = new System.Drawing.Size(117, 20);
+			this.textBox7.TabIndex = 4;
+			this.textBox7.Text = "ID to delete";
 			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 416);
+			this.ClientSize = new System.Drawing.Size(900, 545);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
@@ -1108,6 +1098,5 @@
 		private System.Windows.Forms.DataGridView dataGridView3;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.TextBox textBox7;
-		private System.Windows.Forms.Label label16;
 	}
 }

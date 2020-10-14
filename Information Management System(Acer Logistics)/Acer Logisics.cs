@@ -55,7 +55,7 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			con = new SqlConnection(conStr);
 			con.Open();
-			com = new SqlCommand("SELECT SupplyProd_ID, Received, name, Date, Quantity FROM SupplyProd, OrderTable, Product WHERE SupplyProd.Order_ID=OrderTable.Order_ID AND SupplyProd.Product_ID=Product.Product_ID", con);
+			com = new SqlCommand("SELECT SupplyProd_ID, name, Date, Quantity, Received FROM SupplyProd, OrderTable, Product WHERE SupplyProd.Order_ID=OrderTable.Order_ID AND SupplyProd.Product_ID=Product.Product_ID", con);
 			adp = new SqlDataAdapter();
 			ds = new DataSet();
 
@@ -383,29 +383,46 @@ namespace Information_Management_System_Acer_Logistics_
 		{
 			(new Clients()).ShowDialog();
 		}
-		public void searchID(string quiery, string ID)
+		public void readInventory(string quiery)
+		{
+			con = new SqlConnection(conStr);
+			con.Open();
+			com = new SqlCommand(quiery, con);
+			adp = new SqlDataAdapter();
+			ds = new DataSet();
+
+			adp.SelectCommand = com;
+			adp.Fill(ds, "data");
+
+			dataGridView3.DataSource = ds;
+			dataGridView3.DataMember = "data";
+
+			con.Close();
+		}
+		public void searchID(string quiery, int ID)
 		{
 			con.Open();
 			com = new SqlCommand(quiery, con);
 			dRead = com.ExecuteReader();
 			while(dRead.Read())
 			{
-				if(dRead.GetValue(0).ToString()==ID && dRead.GetValue(3).ToString() == "False")
+				if(int.Parse(dRead.GetValue(0).ToString()) == ID && dRead.GetValue(3).ToString() == "False")
 				{
 					int id = (new Create_Account()).getID("SELECT * FROM Product", dRead.GetValue(1).ToString());
-					String delivered = "True";
-					(new Human_Resources()).updatedata("UPDATE INVENTORY SET QUANTITY = '" + (getQty("SELECT * FROM Inventory", id) + float.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
-					(new Human_Resources()).updatedata("UPDATE SupplyProd SET Received = '" + delivered + "' WHERE SupplyProd_ID = '" + dRead.GetValue(0).ToString() + "'");
+					(new Human_Resources()).updatedata("UPDATE Inventory SET Quantity = '" + (getQty("SELECT * FROM Inventory", id) + float.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
+					bool del = true;
+					(new Human_Resources()).updatedata("UPDATE SupplyProd SET Received = '" + del + "' WHERE SupplyProd_ID = '" + dRead.GetValue(0).ToString() + "'");
 					readPO();
 					readInventory("SELECT * FROM Inventory");
 					break;
 				}
 				else
 				{
-					if (dRead.GetValue(0).ToString() == "True")
+					if (int.Parse(dRead.GetValue(0).ToString()) == ID)
 						MessageBox.Show("Order already received!!");
 					else
 						MessageBox.Show("Order not found. Try again");
+					break;
 				}
 			}
 			con.Close();
@@ -426,29 +443,9 @@ namespace Information_Management_System_Acer_Logistics_
 		private void btn_Click(object sender, EventArgs e)
 		{
 			string addInventoy = "SELECT SupplyProd_ID, name, Quantity, Received FROM SupplyProd,Product WHERE SupplyProd.Product_ID=Product.Product_ID";
-			searchID(addInventoy, txtID.Text);
+			searchID(addInventoy, int.Parse(txtID.Text));
 		}
 
-		private void Inventory_Click(object sender, EventArgs e)
-		{
-
-		}
-		public void readInventory(string quiery)
-		{
-			con = new SqlConnection(conStr);
-			con.Open();
-			com = new SqlCommand(quiery, con);
-			adp = new SqlDataAdapter();
-			ds = new DataSet();
-
-			adp.SelectCommand = com;
-			adp.Fill(ds, "data");
-
-			dataGridView3.DataSource = ds;
-			dataGridView3.DataMember = "data";
-
-			con.Close();
-		}
 		private void button4_Click(object sender, EventArgs e)
 		{
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
