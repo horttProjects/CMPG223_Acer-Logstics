@@ -110,6 +110,8 @@
 			this.label15 = new System.Windows.Forms.Label();
 			this.button4 = new System.Windows.Forms.Button();
 			this.textBox7 = new System.Windows.Forms.TextBox();
+			this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -577,7 +579,7 @@
 			this.dataGridView1.Location = new System.Drawing.Point(7, 168);
 			this.dataGridView1.Name = "dataGridView1";
 			this.dataGridView1.RowHeadersWidth = 51;
-			this.dataGridView1.Size = new System.Drawing.Size(508, 150);
+			this.dataGridView1.Size = new System.Drawing.Size(558, 235);
 			this.dataGridView1.TabIndex = 3;
 			// 
 			// groupBox3
@@ -886,7 +888,8 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.accountToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
@@ -923,9 +926,9 @@
 			// dataGridView3
 			// 
 			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Location = new System.Drawing.Point(533, 168);
+			this.dataGridView3.Location = new System.Drawing.Point(571, 168);
 			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.Size = new System.Drawing.Size(249, 150);
+			this.dataGridView3.Size = new System.Drawing.Size(237, 235);
 			this.dataGridView3.TabIndex = 4;
 			// 
 			// label14
@@ -940,7 +943,7 @@
 			// label15
 			// 
 			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(533, 149);
+			this.label15.Location = new System.Drawing.Point(568, 148);
 			this.label15.Name = "label15";
 			this.label15.Size = new System.Drawing.Size(51, 13);
 			this.label15.TabIndex = 6;
@@ -964,6 +967,21 @@
 			this.textBox7.Size = new System.Drawing.Size(117, 20);
 			this.textBox7.TabIndex = 4;
 			this.textBox7.Text = "ID to delete";
+			// 
+			// accountToolStripMenuItem
+			// 
+			this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem});
+			this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+			this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+			this.accountToolStripMenuItem.Text = "Account";
+			// 
+			// changePasswordToolStripMenuItem
+			// 
+			this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+			this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.changePasswordToolStripMenuItem.Text = "Change Password";
+			this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
 			// 
 			// AcerLogisics
 			// 
@@ -1098,5 +1116,7 @@
 		private System.Windows.Forms.DataGridView dataGridView3;
 		private System.Windows.Forms.Button button4;
 		private System.Windows.Forms.TextBox textBox7;
+		private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
 	}
 }

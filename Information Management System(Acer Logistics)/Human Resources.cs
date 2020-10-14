@@ -166,7 +166,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void comboBox2_MouseHover(object sender, EventArgs e)
 		{
-			comboBox2.ForeColor = Color.Black;
+			searchComboBox.ForeColor = Color.Black;
 		}
 
 		private void SortcomboBox_MouseHover(object sender, EventArgs e)
@@ -183,5 +183,10 @@ namespace Information_Management_System_Acer_Logistics_
         {
 			this.Close();
         }
-    }
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

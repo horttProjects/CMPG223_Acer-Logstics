@@ -185,7 +185,8 @@ namespace Information_Management_System_Acer_Logistics_
 		}
 		private void Management_SelectedIndexChanged(object sender, EventArgs e)
 		{
-
+			readPO();
+			readInventory("SELECT * FROM Inventory");
 			readAll(readDta);
 			readSO(readSONotdelivered);
 			readPO(readPONotDel);
@@ -401,33 +402,36 @@ namespace Information_Management_System_Acer_Logistics_
 		}
 		public void searchID(string quiery, int ID)
 		{
+			bool found = false;
+			bool deli = false;
 			con.Open();
 			com = new SqlCommand(quiery, con);
 			dRead = com.ExecuteReader();
 			while(dRead.Read())
 			{
+
 				if(int.Parse(dRead.GetValue(0).ToString()) == ID && dRead.GetValue(3).ToString() == "False")
 				{
 					int id = (new Create_Account()).getID("SELECT * FROM Product", dRead.GetValue(1).ToString());
-					(new Human_Resources()).updatedata("UPDATE Inventory SET Quantity = '" + (getQty("SELECT * FROM Inventory", id) + float.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
+					(new Human_Resources()).updatedata("UPDATE Inventory SET Quantity = '" + (getQty("SELECT * FROM Inventory", id) + double.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
 					bool del = true;
 					(new Human_Resources()).updatedata("UPDATE SupplyProd SET Received = '" + del + "' WHERE SupplyProd_ID = '" + dRead.GetValue(0).ToString() + "'");
 					readPO();
 					readInventory("SELECT * FROM Inventory");
+					found = true;
 					break;
 				}
-				else
-				{
-					if (int.Parse(dRead.GetValue(0).ToString()) == ID)
-						MessageBox.Show("Order already received!!");
-					else
-						MessageBox.Show("Order not found. Try again");
-					break;
-				}
+				if (dRead.GetValue(3).ToString() == "True")
+					deli = true;
+			}
+			if(!found)
+			{
+				if(deli)
+					MessageBox.Show("Order was already received");
 			}
 			con.Close();
 		}
-		public float getQty(string quiery, int id)
+		public double getQty(string quiery, int id)
 		{
 			con = new SqlConnection(conStr);
 			con.Open();
@@ -436,7 +440,7 @@ namespace Information_Management_System_Acer_Logistics_
 			while (dr.Read())
 			{
 				if (int.Parse(dr.GetValue(0).ToString()) == id)
-					return float.Parse(dr.GetValue(1).ToString());
+					return double.Parse(dr.GetValue(1).ToString());
 			}
 			return 0;
 		}
@@ -445,7 +449,6 @@ namespace Information_Management_System_Acer_Logistics_
 			string addInventoy = "SELECT SupplyProd_ID, name, Quantity, Received FROM SupplyProd,Product WHERE SupplyProd.Product_ID=Product.Product_ID";
 			searchID(addInventoy, int.Parse(txtID.Text));
 		}
-
 		private void button4_Click(object sender, EventArgs e)
 		{
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -457,6 +460,22 @@ namespace Information_Management_System_Acer_Logistics_
 
 				readInventory("SELECT * FROM Inventory");
 			}
+		}
+
+		private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Forgot_Password FP = new Forgot_Password();
+			FP.ShowDialog();
+			string name = FP.getNM;
+			int id = FP.searchByUsername("SELECT * FROM Login", name);
+			if (id != -1)
+			{
+				New_password NP = new New_password();
+				NP.ShowDialog();
+				string newPass = NP.getPass;
+				(new Human_Resources()).updatedata("UPDATE Login SET Password = '" + newPass + "' WHERE Id = '" + id + "'");
+			}
+
 		}
 	}
 }

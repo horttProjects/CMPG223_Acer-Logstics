@@ -25,6 +25,10 @@ namespace Information_Management_System_Acer_Logistics_
 				getPass = txtPass.Text;
 				this.Close();
 			}
+			else
+			{
+				MessageBox.Show("Passwords do not match!!");
+			}
 		}
 
 		private void checkBox1_CheckedChanged(object sender, EventArgs e)

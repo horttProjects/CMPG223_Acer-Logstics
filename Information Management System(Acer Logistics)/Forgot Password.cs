@@ -33,7 +33,7 @@ namespace Information_Management_System_Acer_Logistics_
 
 		public int searchByUsername(string queiry, string searchFor)
 		{
-			int fountAt = 0;
+			int fountAt = -1;
 
 			con = new SqlConnection(conStr);
 			con.Open();

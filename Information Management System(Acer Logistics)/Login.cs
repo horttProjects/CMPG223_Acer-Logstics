@@ -99,15 +99,26 @@ namespace Information_Management_System_Acer_Logistics_
 						AL.ShowDialog();
 						this.Close();
 					}
+					else if(tmp[2] == "Sales Manager")
+					{
+						(new Sales()).ShowDialog();
+					}
 
 				}
 				else
 				{
-					lblFP.Visible = true;
-					if (txtPassword.Text == string.Empty)
-						label5.Visible = true;
-					errorProvider1.SetError(txtPassword, "Invaid password");
+					if (txtID.Text == "Employee" || txtID.Text == "employee" && txtPassword.Text == "0000")
+						(new Graphical()).ShowDialog();
+					else
+					{
+						lblFP.Visible = true;
+						if (txtPassword.Text == string.Empty)
+							label5.Visible = true;
+						errorProvider1.SetError(txtPassword, "Invaid password");
+					}
+
 				}
+
 			}
 			catch(Exception ex)
 			{
