@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace Information_Management_System_Acer_Logistics_
 {
@@ -23,6 +24,10 @@ namespace Information_Management_System_Acer_Logistics_
 		private DataSet ds;
 		private SqlCommand com;
 		private SqlDataReader dRead;
+		float totalSales = 0;
+		float totalOrders = 0;
+		string readSONotdelivered = "SELECT name, Date, Quantity, Status, sell FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Order_ID = OrderTable.Order_ID";
+		string readPONotDel = "SELECT Firstname, Lastname, name, Date, Quantity, Received, sell FROM SupplyProd, Product, OrderTable, Supplier WHERE SupplyProd.Order_ID = OrderTable.Order_ID AND SupplyProd.Product_ID = Product.Product_ID AND SupplyProd.Supplier_ID = Supplier.Supplier_ID";
 		private string readDta = "SELECT * FROM Supplier";
 		private string conStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\ManagementDB.mdf;Integrated Security=True";
 		public void readAll(string quiery)
@@ -73,6 +78,8 @@ namespace Information_Management_System_Acer_Logistics_
 			con.Open();
 			com = new SqlCommand(quiery, con);
 
+			float SODelivered = 0;
+			float SONotDelivered = 0;
 			dRead = com.ExecuteReader();
 			SO.Items.Clear();
 			SO.Items.Add("Acer Logisticts");
@@ -86,9 +93,27 @@ namespace Information_Management_System_Acer_Logistics_
 			int counter = 0;
 			while (dRead.Read())
 			{
-				if(dRead.GetValue(3).ToString()=="False")
-					SO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + "\t" + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "l");
+				string[] date = dRead.GetValue(1).ToString().Split(' ');
+
+				if (date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")) < 1)
+				{
+					if (dRead.GetValue(3).ToString() == "False")
+					{
+						SO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + "\t" + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "liters");
+						SONotDelivered += float.Parse(dRead.GetValue(2).ToString());
+					}
+					else
+					{
+						SODelivered += float.Parse(dRead.GetValue(2).ToString());
+					}
+				}
 			}
+			totalSales = float.Parse(dRead.GetValue(4).ToString()) * SODelivered;
+			SO.Items.Add("\n");
+			SO.Items.Add("_______________________________________________");
+			SO.Items.Add("Total Sales Sold: " + SODelivered);
+			SO.Items.Add("Total Sales Not Sold: " + SONotDelivered);
+			SO.Items.Add("_______________________________________________");
 			con.Close();
 		}
 		public void readPO(string quiery)
@@ -96,11 +121,12 @@ namespace Information_Management_System_Acer_Logistics_
 			con = new SqlConnection(conStr);
 			con.Open();
 			com = new SqlCommand(quiery, con);
-
+			float POdelivered = 0;
+			float PONotdelivered = 0;
 			dRead = com.ExecuteReader();
 			PO.Items.Clear();
 			PO.Items.Add("Acer Logisticts");
-			PO.Items.Add("\t\tSales orders not delivered");
+			PO.Items.Add("\t\tPurchase orders not delivered");
 			PO.Items.Add("=====================================");
 			PO.Items.Add("Date: " + DateTime.UtcNow.ToShortDateString() + " Time: " + DateTime.UtcNow.ToShortTimeString());
 			//PO.Items.Add("\n");
@@ -111,22 +137,34 @@ namespace Information_Management_System_Acer_Logistics_
 			while (dRead.Read())
 			{
 				string[] date = dRead.GetValue(3).ToString().Split(' ');
-				MessageBox.Show((date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")).ToString()));
-				if(date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")) <= 0)
+
+				if (date[0].CompareTo(dateTimePicker1.Value.ToString("yyyy/mm/dd")) < 1)
 				{
 					if (dRead.GetValue(5).ToString() == "False")
-						PO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + " " + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "\t" + dRead.GetValue(3).ToString() + "\t" + dRead.GetValue(4).ToString() + "l");
+					{
+						PO.Items.Add(++counter + ". " + dRead.GetValue(0).ToString() + " " + dRead.GetValue(1).ToString() + " \t" + dRead.GetValue(2).ToString() + "\t" + dRead.GetValue(3).ToString() + "\t" + dRead.GetValue(4).ToString() + "liters");
+						PONotdelivered += float.Parse(dRead.GetValue(4).ToString());
+					}
+					else
+					{
+						POdelivered += float.Parse(dRead.GetValue(4).ToString());
+					}
 				}
 				
 			}
+			totalOrders = float.Parse(dRead.GetValue(6).ToString()) * POdelivered;
+			PO.Items.Add("\n");
+			PO.Items.Add("_______________________________________________________");
+			PO.Items.Add("Total Purchase Orders Delivered = " + POdelivered + "Liters");
+			PO.Items.Add("Total Purchase Orders Not Delivered = " + PONotdelivered + "Liters");
+			PO.Items.Add("_______________________________________________________");
 			con.Close();
 		}
 		private void Management_SelectedIndexChanged(object sender, EventArgs e)
 		{
+
 			readAll(readDta);
-			string readSONotdelivered = "SELECT name, Date, Quantity, Status FROM OrderTable, Product, Sales_Order WHERE Sales_Order.Product_ID = Product.Product_ID AND Sales_Order.Order_ID = OrderTable.Order_ID";
 			readSO(readSONotdelivered);
-			string readPONotDel = "SELECT Firstname, Lastname, name, Date, Quantity, Received FROM SupplyProd, Product, OrderTable, Supplier WHERE SupplyProd.Order_ID = OrderTable.Order_ID AND SupplyProd.Product_ID = Product.Product_ID AND SupplyProd.Supplier_ID = Supplier.Supplier_ID";
 			readPO(readPONotDel);
 			readAll();
 		}
@@ -311,7 +349,10 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
 		{
-
+			readAll(readDta);
+			readSO(readSONotdelivered);
+			readPO(readPONotDel);
+			readAll();
 		}
 	}
 }

@@ -105,6 +105,8 @@
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.btnRetrive = new System.Windows.Forms.Button();
 			this.label12 = new System.Windows.Forms.Label();
+			this.lblProfit = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -125,16 +127,18 @@
 			// 
 			// reports
 			// 
+			this.reports.Controls.Add(this.label13);
+			this.reports.Controls.Add(this.lblProfit);
 			this.reports.Controls.Add(this.label12);
 			this.reports.Controls.Add(this.btnRetrive);
 			this.reports.Controls.Add(this.dateTimePicker1);
 			this.reports.Controls.Add(this.PO);
 			this.reports.Controls.Add(this.SO);
 			this.reports.Controls.Add(this.lblUser);
-			this.reports.Location = new System.Drawing.Point(4, 22);
+			this.reports.Location = new System.Drawing.Point(4, 20);
 			this.reports.Name = "reports";
 			this.reports.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.reports.Size = new System.Drawing.Size(814, 491);
+			this.reports.Size = new System.Drawing.Size(814, 493);
 			this.reports.TabIndex = 4;
 			this.reports.Text = "Reports";
 			this.reports.UseVisualStyleBackColor = true;
@@ -158,10 +162,10 @@
 			this.receiveSo.Controls.Add(this.groupBox2);
 			this.receiveSo.Controls.Add(this.groupBox4);
 			this.receiveSo.Controls.Add(this.dataView);
-			this.receiveSo.Location = new System.Drawing.Point(4, 22);
+			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.receiveSo.Size = new System.Drawing.Size(762, 491);
+			this.receiveSo.Size = new System.Drawing.Size(814, 493);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -487,10 +491,10 @@
 			this.Inventory.Controls.Add(this.groupBox3);
 			this.Inventory.Controls.Add(this.Change);
 			this.Inventory.Controls.Add(this.Add);
-			this.Inventory.Location = new System.Drawing.Point(4, 22);
+			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-			this.Inventory.Size = new System.Drawing.Size(762, 491);
+			this.Inventory.Size = new System.Drawing.Size(814, 493);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
@@ -589,6 +593,7 @@
 			this.Management.Controls.Add(this.tabPage1);
 			this.Management.Location = new System.Drawing.Point(13, 31);
 			this.Management.Name = "Management";
+			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
 			this.Management.Size = new System.Drawing.Size(822, 517);
 			this.Management.TabIndex = 0;
@@ -721,10 +726,10 @@
 			this.tabPage1.Controls.Add(this.textBox4);
 			this.tabPage1.Controls.Add(this.groupBox5);
 			this.tabPage1.Controls.Add(this.dataGridView2);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Location = new System.Drawing.Point(4, 20);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(814, 491);
+			this.tabPage1.Size = new System.Drawing.Size(814, 493);
 			this.tabPage1.TabIndex = 5;
 			this.tabPage1.Text = "Purchase Order";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -892,11 +897,11 @@
 			// 
 			// btnRetrive
 			// 
-			this.btnRetrive.Location = new System.Drawing.Point(101, 332);
+			this.btnRetrive.Location = new System.Drawing.Point(104, 330);
 			this.btnRetrive.Name = "btnRetrive";
-			this.btnRetrive.Size = new System.Drawing.Size(75, 23);
+			this.btnRetrive.Size = new System.Drawing.Size(75, 45);
 			this.btnRetrive.TabIndex = 3;
-			this.btnRetrive.Text = "Retrieve";
+			this.btnRetrive.Text = "Graphical";
 			this.btnRetrive.UseVisualStyleBackColor = true;
 			this.btnRetrive.Click += new System.EventHandler(this.btnRetrive_Click);
 			// 
@@ -908,6 +913,26 @@
 			this.label12.Size = new System.Drawing.Size(32, 13);
 			this.label12.TabIndex = 5;
 			this.label12.Text = "Filter:";
+			// 
+			// lblProfit
+			// 
+			this.lblProfit.AutoSize = true;
+			this.lblProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblProfit.Location = new System.Drawing.Point(269, 330);
+			this.lblProfit.Name = "lblProfit";
+			this.lblProfit.Size = new System.Drawing.Size(294, 20);
+			this.lblProfit.TabIndex = 6;
+			this.lblProfit.Text = "PROFIT MADE FOR THE PERIOD: ";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+			this.label13.Location = new System.Drawing.Point(6, 20);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(73, 13);
+			this.label13.TabIndex = 7;
+			this.label13.Text = "Get Text-File?";
 			// 
 			// AcerLogisics
 			// 
@@ -1033,5 +1058,7 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker1;
 		private System.Windows.Forms.Button btnRetrive;
 		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.Label lblProfit;
 	}
 }
