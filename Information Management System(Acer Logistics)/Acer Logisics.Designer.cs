@@ -70,8 +70,13 @@
 			this.lblFN = new System.Windows.Forms.Label();
 			this.dataView = new System.Windows.Forms.DataGridView();
 			this.Inventory = new System.Windows.Forms.TabPage();
+			this.label15 = new System.Windows.Forms.Label();
+			this.label14 = new System.Windows.Forms.Label();
+			this.dataGridView3 = new System.Windows.Forms.DataGridView();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.button4 = new System.Windows.Forms.Button();
+			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.Add = new System.Windows.Forms.GroupBox();
 			this.btn = new System.Windows.Forms.Button();
 			this.txtID = new System.Windows.Forms.TextBox();
@@ -103,15 +108,10 @@
 			this.logisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.lblUsername = new System.Windows.Forms.Label();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.dataGridView3 = new System.Windows.Forms.DataGridView();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.button4 = new System.Windows.Forms.Button();
-			this.textBox7 = new System.Windows.Forms.TextBox();
 			this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lblUsername = new System.Windows.Forms.Label();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.reports.SuspendLayout();
 			this.receiveSo.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -120,6 +120,7 @@
 			this.groupBox4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.Inventory.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.groupBox3.SuspendLayout();
 			this.Add.SuspendLayout();
@@ -129,7 +130,6 @@
 			this.groupBox5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.menuStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// reports
@@ -237,7 +237,7 @@
 			this.receiveSo.Location = new System.Drawing.Point(4, 20);
 			this.receiveSo.Name = "receiveSo";
 			this.receiveSo.Padding = new System.Windows.Forms.Padding(3);
-			this.receiveSo.Size = new System.Drawing.Size(814, 492);
+			this.receiveSo.Size = new System.Drawing.Size(873, 492);
 			this.receiveSo.TabIndex = 2;
 			this.receiveSo.Text = "Suppliers";
 			this.receiveSo.UseVisualStyleBackColor = true;
@@ -269,18 +269,19 @@
 			this.textBox2.Size = new System.Drawing.Size(114, 20);
 			this.textBox2.TabIndex = 18;
 			this.textBox2.Text = "Enter value to search";
+			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
 			// 
 			// comboBox2
 			// 
 			this.comboBox2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
 			this.comboBox2.FormattingEnabled = true;
 			this.comboBox2.Items.AddRange(new object[] {
-            "Id",
-            "First name ",
-            "Last name",
-            "Email",
-            "Phone number",
-            "Address"});
+            "salesOrder_ID",
+            "Firstname",
+            "Lastname",
+            "gender",
+            "Phone_number",
+            "Email"});
 			this.comboBox2.Location = new System.Drawing.Point(340, 215);
 			this.comboBox2.Name = "comboBox2";
 			this.comboBox2.Size = new System.Drawing.Size(94, 21);
@@ -293,13 +294,16 @@
 			this.SortcomboBox.ForeColor = System.Drawing.SystemColors.ButtonShadow;
 			this.SortcomboBox.FormattingEnabled = true;
 			this.SortcomboBox.Items.AddRange(new object[] {
+            "Supplier_ID",
             "Firstname",
-            "LastName"});
+            "Lastname",
+            "Phone_number"});
 			this.SortcomboBox.Location = new System.Drawing.Point(213, 215);
 			this.SortcomboBox.Name = "SortcomboBox";
 			this.SortcomboBox.Size = new System.Drawing.Size(99, 21);
 			this.SortcomboBox.TabIndex = 16;
 			this.SortcomboBox.Text = "Sort by";
+			this.SortcomboBox.SelectedIndexChanged += new System.EventHandler(this.SortcomboBox_SelectedIndexChanged);
 			// 
 			// groupBox1
 			// 
@@ -568,10 +572,36 @@
 			this.Inventory.Location = new System.Drawing.Point(4, 20);
 			this.Inventory.Name = "Inventory";
 			this.Inventory.Padding = new System.Windows.Forms.Padding(3);
-			this.Inventory.Size = new System.Drawing.Size(814, 492);
+			this.Inventory.Size = new System.Drawing.Size(873, 492);
 			this.Inventory.TabIndex = 0;
 			this.Inventory.Text = "Inventory";
 			this.Inventory.UseVisualStyleBackColor = true;
+			// 
+			// label15
+			// 
+			this.label15.AutoSize = true;
+			this.label15.Location = new System.Drawing.Point(568, 148);
+			this.label15.Name = "label15";
+			this.label15.Size = new System.Drawing.Size(51, 13);
+			this.label15.TabIndex = 6;
+			this.label15.Text = "Inventory";
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(7, 148);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(38, 13);
+			this.label14.TabIndex = 5;
+			this.label14.Text = "Orders";
+			// 
+			// dataGridView3
+			// 
+			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView3.Location = new System.Drawing.Point(571, 168);
+			this.dataGridView3.Name = "dataGridView3";
+			this.dataGridView3.Size = new System.Drawing.Size(296, 235);
+			this.dataGridView3.TabIndex = 4;
 			// 
 			// dataGridView1
 			// 
@@ -592,6 +622,25 @@
 			this.groupBox3.TabIndex = 2;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Delete";
+			// 
+			// button4
+			// 
+			this.button4.Location = new System.Drawing.Point(61, 74);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(75, 23);
+			this.button4.TabIndex = 5;
+			this.button4.Text = "Delete";
+			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
+			// 
+			// textBox7
+			// 
+			this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.textBox7.Location = new System.Drawing.Point(42, 38);
+			this.textBox7.Name = "textBox7";
+			this.textBox7.Size = new System.Drawing.Size(117, 20);
+			this.textBox7.TabIndex = 4;
+			this.textBox7.Text = "ID to delete";
 			// 
 			// Add
 			// 
@@ -641,7 +690,7 @@
 			this.Management.Name = "Management";
 			this.Management.Padding = new System.Drawing.Point(6, 1);
 			this.Management.SelectedIndex = 0;
-			this.Management.Size = new System.Drawing.Size(822, 516);
+			this.Management.Size = new System.Drawing.Size(881, 516);
 			this.Management.TabIndex = 0;
 			this.Management.SelectedIndexChanged += new System.EventHandler(this.Management_SelectedIndexChanged);
 			// 
@@ -803,13 +852,14 @@
 			this.textBox3.Size = new System.Drawing.Size(147, 20);
 			this.textBox3.TabIndex = 0;
 			this.textBox3.Text = "Quantity";
+			this.textBox3.Click += new System.EventHandler(this.textBox3_Click);
 			// 
 			// dataGridView2
 			// 
 			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView2.Location = new System.Drawing.Point(7, 183);
 			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(664, 228);
+			this.dataGridView2.Size = new System.Drawing.Size(648, 228);
 			this.dataGridView2.TabIndex = 0;
 			// 
 			// fileToolStripMenuItem
@@ -894,9 +944,25 @@
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
 			this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-			this.menuStrip1.Size = new System.Drawing.Size(900, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(894, 24);
 			this.menuStrip1.TabIndex = 1;
 			this.menuStrip1.Text = "menuStrip1";
+			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+			// 
+			// accountToolStripMenuItem
+			// 
+			this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changePasswordToolStripMenuItem});
+			this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+			this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+			this.accountToolStripMenuItem.Text = "Account";
+			// 
+			// changePasswordToolStripMenuItem
+			// 
+			this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+			this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+			this.changePasswordToolStripMenuItem.Text = "Change Password";
+			this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
 			// 
 			// lblUsername
 			// 
@@ -923,71 +989,11 @@
 			this.linkLabel1.Text = "Log-out";
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
-			// dataGridView3
-			// 
-			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Location = new System.Drawing.Point(571, 168);
-			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.Size = new System.Drawing.Size(237, 235);
-			this.dataGridView3.TabIndex = 4;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(7, 148);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(38, 13);
-			this.label14.TabIndex = 5;
-			this.label14.Text = "Orders";
-			// 
-			// label15
-			// 
-			this.label15.AutoSize = true;
-			this.label15.Location = new System.Drawing.Point(568, 148);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(51, 13);
-			this.label15.TabIndex = 6;
-			this.label15.Text = "Inventory";
-			// 
-			// button4
-			// 
-			this.button4.Location = new System.Drawing.Point(61, 74);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(75, 23);
-			this.button4.TabIndex = 5;
-			this.button4.Text = "Delete";
-			this.button4.UseVisualStyleBackColor = true;
-			this.button4.Click += new System.EventHandler(this.button4_Click);
-			// 
-			// textBox7
-			// 
-			this.textBox7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.textBox7.Location = new System.Drawing.Point(42, 38);
-			this.textBox7.Name = "textBox7";
-			this.textBox7.Size = new System.Drawing.Size(117, 20);
-			this.textBox7.TabIndex = 4;
-			this.textBox7.Text = "ID to delete";
-			// 
-			// accountToolStripMenuItem
-			// 
-			this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changePasswordToolStripMenuItem});
-			this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-			this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-			this.accountToolStripMenuItem.Text = "Account";
-			// 
-			// changePasswordToolStripMenuItem
-			// 
-			this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-			this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.changePasswordToolStripMenuItem.Text = "Change Password";
-			this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
-			// 
 			// AcerLogisics
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(900, 545);
+			this.ClientSize = new System.Drawing.Size(894, 545);
 			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.lblUsername);
 			this.Controls.Add(this.Management);
@@ -1011,6 +1017,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
 			this.Inventory.ResumeLayout(false);
 			this.Inventory.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
@@ -1026,7 +1033,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

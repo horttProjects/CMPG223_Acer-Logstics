@@ -70,7 +70,7 @@ namespace Information_Management_System_Acer_Logistics_
 		private void AcerLogisics_Load(object sender, EventArgs e)
 		{
 			readPO();
-			readInventory("SELECT * FROM Inventory");
+			readInventory("SELECT name, Descr, Quantity FROM Inventory, Product WHERE Inventory.Product_ID=Product.Product_ID");
 		}
 
 		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -413,7 +413,7 @@ namespace Information_Management_System_Acer_Logistics_
 				if(int.Parse(dRead.GetValue(0).ToString()) == ID && dRead.GetValue(3).ToString() == "False")
 				{
 					int id = (new Create_Account()).getID("SELECT * FROM Product", dRead.GetValue(1).ToString());
-					(new Human_Resources()).updatedata("UPDATE Inventory SET Quantity = '" + (getQty("SELECT * FROM Inventory", id) + double.Parse(dRead.GetValue(2).ToString()).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'"));
+					(new Human_Resources()).updatedata("UPDATE Inventory SET Quantity = '" + (getQty("SELECT * FROM Inventory", id) + double.Parse(dRead.GetValue(2).ToString())).ToString() + "' WHERE Product_ID = '" + id.ToString() + "'");
 					bool del = true;
 					(new Human_Resources()).updatedata("UPDATE SupplyProd SET Received = '" + del + "' WHERE SupplyProd_ID = '" + dRead.GetValue(0).ToString() + "'");
 					readPO();
@@ -454,11 +454,12 @@ namespace Information_Management_System_Acer_Logistics_
 			DialogResult delete = MessageBox.Show("You wont be able you retrieve this information", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
 			if (delete == DialogResult.OK)
 			{
-				(new Human_Resources()).deletedata("DELETE FROM Inventory WHERE Product_ID = '" + (textBox7.Text) + "'");
+
+				(new Human_Resources()).deletedata("DELETE FROM SupplyProd WHERE SupplyProd_ID = '" + (textBox7.Text) + "'");
 				MessageBox.Show(textBox7.Text + " Deleted");
 				textBox7.Text = string.Empty;
-
-				readInventory("SELECT * FROM Inventory");
+				readPO();
+				//readInventory("SELECT * FROM Inventory");
 			}
 		}
 
@@ -475,6 +476,27 @@ namespace Information_Management_System_Acer_Logistics_
 				string newPass = NP.getPass;
 				(new Human_Resources()).updatedata("UPDATE Login SET Password = '" + newPass + "' WHERE Id = '" + id + "'");
 			}
+
+		}
+
+		private void textBox2_TextChanged(object sender, EventArgs e)
+		{
+			if (textBox2.Text != string.Empty)
+				readAll("SELECT * FROM Supplier WHERE 'comboBox2.Text' LIKE 'textBox2.Text%' OR Firstname = '" + textBox2.Text + "'");
+		}
+
+		private void textBox3_Click(object sender, EventArgs e)
+		{
+			textBox3.Text = string.Empty;
+		}
+
+		private void SortcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			readAll("SELECT * FROM Supplier ORDER BY 'SortcomboBox.Text'");
+		}
+
+		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+		{
 
 		}
 	}

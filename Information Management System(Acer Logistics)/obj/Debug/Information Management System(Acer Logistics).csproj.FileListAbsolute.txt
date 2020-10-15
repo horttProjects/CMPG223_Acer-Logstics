@@ -40,3 +40,4 @@ C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Manageme
 C:\Users\Nhlul\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information Management System(Acer Logistics).pdb
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Graphical.resources
 C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Clients.resources
+C:\Users\Acer\Desktop\Acer Logistics\CMPG223_Acer-Logstics\Information Management System(Acer Logistics)\obj\Debug\Information_Management_System_Acer_Logistics_.Logistics.resources

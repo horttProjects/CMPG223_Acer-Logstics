@@ -54,7 +54,12 @@ namespace Information_Management_System_Acer_Logistics_
 		//"SELECT Username, Firstname, LastName FROM Login, Employees WHERE Login.Id = Employees.UserID"
 		private void Human_Resources_Load(object sender, EventArgs e)
 		{
+			System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+			gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+			Region rg = new Region(gp);
+			pictureBox1.Region = rg;
 			readAll(readEmployees);
+
 		}
 		public void updatedata(string queiry)
 		{
@@ -186,7 +191,18 @@ namespace Information_Management_System_Acer_Logistics_
 
 		private void textBox2_TextChanged(object sender, EventArgs e)
 		{
+			if(textBox2.Text != string.Empty)
+				readAll("SELECT Id,Firstname,LastName,gender,Email,Phone_Number,Address,Position FROM Employees WHERE 'searchComboBox.Text' LIKE 'textBox2.Text%' OR Firstname = '" + textBox2.Text+ "'");
+		}
 
+		private void textBox2_MouseClick(object sender, MouseEventArgs e)
+		{
+			textBox2.Text = string.Empty;
+		}
+
+		private void SortcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			readAll("SELECT Id,Firstname,LastName,gender,Email,Phone_Number,Address,Position FROM Employees ORDER BY 'SortcomboBox.Text'");
 		}
 	}
 }

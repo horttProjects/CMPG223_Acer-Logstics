@@ -159,6 +159,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logistics.resx">
+      <DependentUpon>Logistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="New_password.resx">
       <DependentUpon>New_password.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,6 +10,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+	//Thabiso Kubeka – 30286115
+	//Setidisho Onthatile – 31930794
+	//Rikhotso Hlulani – 30657830
+	//Tshepang Mabovu – 30575516
+	//Relebogile Mogotsi – 32134452
+	//Onkgopotse Senye -30383494
+
 namespace Information_Management_System_Acer_Logistics_
 {
 	public partial class Login : Form

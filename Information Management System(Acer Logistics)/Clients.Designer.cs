@@ -356,7 +356,7 @@
 			this.dataView.Location = new System.Drawing.Point(6, 265);
 			this.dataView.Name = "dataView";
 			this.dataView.RowHeadersWidth = 51;
-			this.dataView.Size = new System.Drawing.Size(698, 223);
+			this.dataView.Size = new System.Drawing.Size(666, 223);
 			this.dataView.TabIndex = 19;
 			// 
 			// Clients
